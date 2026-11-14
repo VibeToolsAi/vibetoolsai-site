@@ -143,10 +143,10 @@ COLLECTIONS = [
         "title": "Jedzenie dla trenujących",
         "intro": "Ebooki z przepisami ze zwykłych produktów, z policzonym makro.",
         "products": [
-            {"slug": "paliwo-w-15-minut", "name": "Paliwo w 15 minut",
+            {"slug": "paliwo-w-15-minut", "name": "Paliwo w 15 minut: 101 szybkich posiłków przed i po treningu",
              "price": "39 zł", "formats": ["Ebook"],
              "text": "101 szybkich posiłków przed i po treningu, w wersji na redukcję i na masę."},
-            {"slug": "zdrowe-sniadania-sportowiec", "name": "Zdrowe śniadania dla sportowca",
+            {"slug": "zdrowe-sniadania-sportowiec", "name": "Zdrowe śniadania dla sportowca: 30 przepisów dopasowanych do treningu",
              "price": "39 zł", "formats": ["Ebook"],
              "text": "30 śniadań dopasowanych do tego, ile czasu zostało do treningu."},
         ],
