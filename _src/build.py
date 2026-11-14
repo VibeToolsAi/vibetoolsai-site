@@ -105,6 +105,7 @@ def page(*, path, lang, title, description, body, alt=None, image=None, jsonld=N
 <meta property="og:url" content="{canonical}">
 <meta property="og:site_name" content="VibeToolsAI">
 {og_img}
+<meta name="p:domain_verify" content="cafecce7516f0ac8daa4d6f0feb5818b">
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
