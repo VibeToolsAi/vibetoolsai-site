@@ -113,7 +113,7 @@ def page(*, path, lang, title, description, body, alt=None, image=None, jsonld=N
 <a class="skip" href="#main">{"Przejdź do treści" if pl else "Skip to content"}</a>
 <header class="masthead">
   <div class="wrap masthead-in">
-    <a class="brand" href="{"/pl/" if pl else "/"}"><span class="brand-mark" aria-hidden="true"></span>VibeToolsAI</a>
+    <a class="brand" href="{"/pl/" if pl else "/"}"><span class="brand-mark" aria-hidden="true"></span><span class="brand-word">VibeToolsAI</span></a>
     <nav aria-label="{"Główna" if pl else "Main"}">{nav_html}</nav>
   </div>
 </header>
@@ -122,7 +122,7 @@ def page(*, path, lang, title, description, body, alt=None, image=None, jsonld=N
 </main>
 <footer class="foot">
   <div class="wrap foot-in">
-    <div class="foot-brand"><a class="brand" href="{"/pl/" if pl else "/"}"><span class="brand-mark" aria-hidden="true"></span>VibeToolsAI</a>
+    <div class="foot-brand"><a class="brand" href="{"/pl/" if pl else "/"}"><span class="brand-mark" aria-hidden="true"></span><span class="brand-word">VibeToolsAI</span></a>
     <p>{"Pliki do pobrania: planery, arkusze i prompty." if pl else "Downloadable planners, spreadsheets and prompt packs."}</p></div>
     <div><p class="foot-seller">{e(SELLER_PL if pl else SELLER)}</p>
     <p><a href="mailto:{EMAIL}">{EMAIL}</a></p>

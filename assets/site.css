@@ -57,8 +57,12 @@ svg { width: 1.25em; height: 1.25em; flex: none; fill: none; stroke: currentColo
   backdrop-filter: saturate(1.4) blur(8px); border-bottom: 1px solid var(--rule); }
 .masthead-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem 1.5rem; padding-top: .8rem; padding-bottom: .8rem; }
 .brand { font-family: var(--serif); font-weight: 700; font-size: 1.25rem; text-decoration: none; display: inline-flex; align-items: center; gap: .55rem; }
-.brand-mark { width: 1.1rem; height: 1.35rem; border-radius: 2px 6px 6px 2px; background:
-  linear-gradient(var(--plum) 0 25%, var(--blue) 25% 50%, var(--green) 50% 75%, var(--red) 75%); }
+.brand-mark { width: 1.15rem; height: 1.4rem; border-radius: 3px 7px 7px 3px; background: var(--logo-grad); }
+/* Logo colours live in these tokens so the look can follow trends: change 3 values. Current: sunset neon. */
+:root { --logo-a: #ff3d8b; --logo-b: #ff8a3d; --logo-c: #7b3fe4;
+  --logo-grad: linear-gradient(160deg, var(--logo-a) 0%, var(--logo-b) 45%, var(--logo-c) 100%); }
+.brand-word { background: linear-gradient(90deg, var(--logo-a), var(--logo-b) 55%, var(--logo-c)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@media (prefers-color-scheme: dark) { :root { --logo-a: #ff5c9d; --logo-b: #ffa25c; --logo-c: #9a6bff; } }
 .masthead nav { display: flex; flex-wrap: wrap; gap: .2rem 1.2rem; font-size: .97rem; }
 .masthead nav a { text-decoration: none; color: var(--muted); padding: .2rem 0; }
 .masthead nav a:hover { color: var(--ink); text-decoration: underline; }
