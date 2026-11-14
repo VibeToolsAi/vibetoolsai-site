@@ -26,6 +26,10 @@ COLLECTIONS = [
              "price": "$12", "formats": ["21 pages", "PDF Letter + A4", "12-sheet XLSX"],
              "text": "What to do in the first days and weeks after a death, with time-sensitive tasks "
                      "marked and space to note who is handling what."},
+            {"slug": "kept-kindly-caregiver-binder", "name": "Kept Kindly Caregiver Binder",
+             "price": "$14", "formats": ["34 pages", "PDF Letter + A4", "18-sheet XLSX"],
+             "text": "A care planner for an aging parent: emergency info sheet, medications, doctor visits, "
+                     "family caregiver schedule and care expenses."},
             {"slug": "executor-checklist", "name": "Executor Checklist & Expense Log",
              "price": "$16", "formats": ["27 pages", "PDF Letter + A4", "19-sheet XLSX"],
              "text": "An estate settlement tracker for executors: tasks, assets, debts, income and "

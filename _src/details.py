@@ -58,6 +58,26 @@ DETAILS = {
         "previews": ["after-death-checklist-1", "after-death-checklist-2", "after-death-checklist-p5", "after-death-checklist-p13"],
         "note": KK_DISCLAIMER,
     },
+    "kept-kindly-caregiver-binder": {
+        "title": "Kept Kindly Caregiver Binder: Aging Parent Care Planner (US + Canada)",
+        "seo": "Printable caregiver binder for an aging parent: emergency info sheet, medication list and log, doctor visits, caregiver schedule, care expenses. PDF + spreadsheet, US and Canada.",
+        "lede": "When you help care for an aging parent, the next person who steps in needs to know who to call, which "
+                "medications are current and where the papers are. This binder keeps it all in one place, for the whole family.",
+        "inside": [
+            "Emergency Info Sheet to keep on the fridge", "Care recipient profile and what matters to them",
+            "Care team, doctors, pharmacy and helpers", "Medication list and administration log",
+            "Doctor visits and questions for the doctor", "Symptoms, wellbeing and daily routine",
+            "Family caregiver schedule and team contacts", "Health insurance pages for the US and Canada",
+            "Care expenses with running totals", "Home safety checklist",
+            "Hospital bag and discharge questions", "Documents and where they are (no passwords or full numbers)",
+            "Caring for the caregiver",
+        ],
+        "specs": ["34 pages", "PDF US Letter + A4", "18-sheet spreadsheet", "US + Canada"],
+        "previews": ["kept-kindly-caregiver-binder-1", "kept-kindly-caregiver-binder-p5", "kept-kindly-caregiver-binder-p10",
+                     "kept-kindly-caregiver-binder-p25", "kept-kindly-caregiver-binder-p31"],
+        "note": "An organizational tool, not medical, legal or financial advice. It does not replace a doctor, pharmacist, "
+                "nurse or lawyer. In an emergency, call 911.",
+    },
     "executor-checklist": {
         "title": "Executor Checklist & Expense Log: Estate Settlement Tracker (US + Canada)",
         "seo": "Executor checklist and estate settlement tracker: task list, asset inventory, creditor log and executor expense log. Printable PDF + spreadsheet.",

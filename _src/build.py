@@ -213,6 +213,7 @@ def fan(slugs, label):
 # ------------------------------------------------------------------ pages
 
 EN_ORDER = ["before-after-legacy-bundle", "kept-kindly-legacy-planner", "after-death-checklist", "executor-checklist",
+            "kept-kindly-caregiver-binder",
             "realtor-ai-playbook", "loan-officer-ai-playbook", "local-business-ai-playbook", "teacher-ai-planner",
             "realtor-mini-25", "freelancer-tax-profit-tracker",
             "free-tax-set-aside-calculator", "listing-prompts-free", "free-realtor-prompts", "free-loan-officer-prompts",
@@ -354,15 +355,16 @@ def build_kept_kindly():
     ]
     faq = "".join(f"<details><summary>{e(a)}</summary><p>{b}</p></details>" for a, b in q)
     cards = "\n".join(card(s, "kept-kindly") for s in ["before-after-legacy-bundle", "kept-kindly-legacy-planner",
-                                                         "after-death-checklist", "executor-checklist"])
+                                                         "after-death-checklist", "executor-checklist",
+                                                         "kept-kindly-caregiver-binder"])
     body = f"""
 <section class="hero hero-kk tab-plum">
   <div class="wrap hero-in">
     <div class="hero-copy">
       <p class="crumb"><a href="/">VibeToolsAI</a> / Kept Kindly</p>
       <h1>Write it down once, so your family doesn’t have to guess.</h1>
-      <p class="lede">Printable planners and spreadsheets for households in the United States and Canada. One records where
-      everything is and what you want. The other two guide your family and executor through the months after a death.</p>
+      <p class="lede">Printable planners and spreadsheets for households in the United States and Canada: one to record where
+      everything is, one to coordinate care for an aging parent, and two to guide your family and executor after a death.</p>
       <p class="hero-cta"><a class="btn btn-lg" href="{buy_url("before-after-legacy-bundle", "kept-kindly-hero")}">Get all three for $32</a>
       <a class="link" href="#planners">Compare the planners</a></p>
     </div>
@@ -372,7 +374,7 @@ def build_kept_kindly():
 </section>
 <section class="shop" id="planners" aria-labelledby="pl-h">
   <div class="wrap">
-    <div class="shop-head"><h2 id="pl-h">Three planners, one for each stage</h2></div>
+    <div class="shop-head"><h2 id="pl-h">Four planners, one for each stage</h2></div>
     <div class="grid grid-4">
 {cards}
     </div>
@@ -384,6 +386,8 @@ def build_kept_kindly():
     <ol class="stages">
       <li><strong>Before</strong><span>You want your partner or children to find everything easily one day.
       Start with the <a href="{purl("kept-kindly-legacy-planner")}">Legacy Planner</a>.</span></li>
+      <li><strong>While caring</strong><span>You help look after an aging parent and the family needs to share what matters.
+      Use the <a href="{purl("kept-kindly-caregiver-binder")}">Caregiver Binder</a>.</span></li>
       <li><strong>The first weeks</strong><span>Someone close has just died and you need to know what to do first.
       Use the <a href="{purl("after-death-checklist")}">After Death Checklist</a>.</span></li>
       <li><strong>Settling the estate</strong><span>You are the executor or helping one, and need to track tasks, assets

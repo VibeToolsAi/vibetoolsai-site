@@ -163,7 +163,7 @@ svg { width: 1.25em; height: 1.25em; flex: none; fill: none; stroke: currentColo
 .steps { padding-left: 1.25rem; margin: 0 0 1rem; }
 .steps li { margin-bottom: .6rem; }
 .stages { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 1rem; }
-@media (min-width: 52rem) { .stages { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 52rem) { .stages { grid-template-columns: repeat(4, 1fr); } }
 .stages li { background: #fff; border-radius: 16px; padding: 1.3rem; display: flex; flex-direction: column; gap: .4rem; box-shadow: var(--shadow); }
 .stages strong { font-family: var(--round); font-size: 1.2rem; color: var(--focus); }
 .stages span { color: var(--muted); }
