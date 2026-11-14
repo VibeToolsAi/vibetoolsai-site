@@ -104,7 +104,8 @@ def page(*, path, lang, title, description, body, alt=None, image=None, jsonld=N
 <meta property="og:url" content="{canonical}">
 <meta property="og:site_name" content="VibeToolsAI">
 {og_img}
-<meta name="theme-color" content="#1e2a38">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
 {ld}{js}
@@ -113,7 +114,7 @@ def page(*, path, lang, title, description, body, alt=None, image=None, jsonld=N
 <a class="skip" href="#main">{"Przejdź do treści" if pl else "Skip to content"}</a>
 <header class="masthead">
   <div class="wrap masthead-in">
-    <a class="brand" href="{"/pl/" if pl else "/"}"><span class="brand-mark" aria-hidden="true"></span><span class="brand-word">VibeToolsAI</span></a>
+    <a class="brand" href="{"/pl/" if pl else "/"}"><span class="brand-word">VibeTools<em>AI</em></span></a>
     <nav aria-label="{"Główna" if pl else "Main"}">{nav_html}</nav>
   </div>
 </header>
@@ -122,7 +123,7 @@ def page(*, path, lang, title, description, body, alt=None, image=None, jsonld=N
 </main>
 <footer class="foot">
   <div class="wrap foot-in">
-    <div class="foot-brand"><a class="brand" href="{"/pl/" if pl else "/"}"><span class="brand-mark" aria-hidden="true"></span><span class="brand-word">VibeToolsAI</span></a>
+    <div class="foot-brand"><a class="brand" href="{"/pl/" if pl else "/"}"><span class="brand-word">VibeTools<em>AI</em></span></a>
     <p>{"Pliki do pobrania: planery, arkusze i prompty." if pl else "Downloadable planners, spreadsheets and prompt packs."}</p></div>
     <div><p class="foot-seller">{e(SELLER_PL if pl else SELLER)}</p>
     <p><a href="mailto:{EMAIL}">{EMAIL}</a></p>
@@ -143,7 +144,7 @@ def card(slug, campaign):
     cv = cover(slug)
     pic = img(cv, f'{"Okładka" if pl else "Cover of"} {p["name"]}', "card-img flat" if slug == "before-after-legacy-bundle" else "card-img") if cv else ""
     badge = (f'<span class="badge badge-free">{"Za darmo" if pl else "Free"}</span>' if p["free"] else
-             (f'<span class="badge">{"Oszczędzasz" if pl else "Save"} {"$10" if slug == "before-after-legacy-bundle" else ""}</span>'
+             (f'<span class="badge badge-save">{"Oszczędzasz" if pl else "Save"} {"$10" if slug == "before-after-legacy-bundle" else ""}</span>'
               if p.get("was") else ""))
     was = f' <s>{e(p["was"])}</s>' if p.get("was") else ""
     search = e(f'{p["name"]} {p["text"]} {" ".join(p["formats"])} {p["tab"]}'.lower())
@@ -192,8 +193,15 @@ def shop(slugs, pl=False, filters=None):
 def searchbox(pl=False):
     return f"""<form class="search" role="search" action="#{"sklep" if pl else "shop"}" onsubmit="return false">
   <label class="sr" for="q">{"Szukaj produktów" if pl else "Search products"}</label>
-  {ICON["search"]}<input id="q" type="search" data-search placeholder="{"Szukaj: KSeF, prompty, śniadania…" if pl else "Try “executor”, “realtor” or “tax”"}" autocomplete="off">
+  {ICON["search"]}<input id="q" type="search" data-search placeholder="{"Szukaj: KSeF, prompty, śniadania…" if pl else "Search planners, prompts, spreadsheets…"}" autocomplete="off">
+  <button type="submit" class="btn search-btn" data-go>{"Szukaj" if pl else "Search"}</button>
 </form>"""
+
+
+def circles(items, pl=False):
+    lis = "".join(f'<li><a href="#{"sklep" if pl else "shop"}" data-pick="{k}">'
+                  f'<span class="circ">{img(cover(s), "", sizes="5rem")}</span>{e(t)}</a></li>' for k, t, s in items)
+    return f'<ul class="circles" aria-label="{"Kategorie" if pl else "Categories"}">{lis}</ul>'
 
 
 def fan(slugs, label):
@@ -222,11 +230,8 @@ def build_home():
       <p class="lede">Family records, estate checklists, freelancer tax sheets and ready-to-paste prompts for realtors,
       loan officers, teachers and local businesses. Buy once, download straight away, keep forever.</p>
       {searchbox()}
-      <p class="popular">Popular:
-        <a href="/kept-kindly/">Legacy planner</a>
-        <a href="{purl("after-death-checklist")}">After death checklist</a>
-        <a href="{purl("realtor-ai-playbook")}">Realtor prompts</a>
-        <a href="{purl("free-tax-set-aside-calculator")}">Free tax calculator</a></p>
+      {circles([("kept-kindly", "Family & legacy", "kept-kindly-legacy-planner"), ("ai-prompts", "AI prompt packs", "realtor-ai-playbook"),
+                ("freelancer-money", "Freelancers", "free-tax-set-aside-calculator"), ("free", "Free", "oytvfx")])}
     </div>
     {fan(["kept-kindly-legacy-planner", "realtor-ai-playbook", "after-death-checklist", "loan-officer-ai-playbook"], "Product covers")}
   </div>
@@ -296,10 +301,8 @@ def build_pl():
       <p class="lede">Przygotuj firmę na obowiązkowy KSeF od 1 stycznia 2027, uporządkuj współpracę z księgową
       i oddaj powtarzalne teksty AI. Kupujesz raz, pliki pobierasz od razu.</p>
       {searchbox(True)}
-      <p class="popular">Popularne:
-        <a href="{purl("fzjwvr")}">KSeF krok po kroku</a>
-        <a href="{purl("free-ksef-licznik-10k")}">Darmowy licznik 10 000 zł</a>
-        <a href="{purl("ai-w-malej-firmie")}">AI w małej firmie</a></p>
+      {circles([("ksef", "KSeF i JDG", "fzjwvr"), ("ai-firma", "AI w firmie", "ai-w-malej-firmie"),
+                ("sport", "Jedzenie i sport", "paliwo-w-15-minut"), ("free", "Za darmo", "hwdanj")], True)}
     </div>
     {fan(["fzjwvr", "ai-w-malej-firmie", "paliwo-w-15-minut", "zestaw-wdrozeniowy-ksef"], "Okładki produktów")}
   </div>
@@ -445,6 +448,13 @@ def build_product(slug):
         u = PRODUCTS[up]
         upsell = (f'<p class="upsell">{"Pełna wersja:" if pl else "Want the full version?"} '
                   f'<a href="{purl(up)}">{e(u["name"])}</a> ({e(u["price"])})</p>')
+    lang_req = ""
+    if d and d.get("translate"):
+        subj = f"{'Wersja językowa' if pl else 'Language version'}: {p['name']}"
+        from urllib.parse import quote
+        lang_req = (f'<p class="lang-req">{"Potrzebujesz po angielsku albo w innym języku?" if pl else "Need it in Polish or another language?"} '
+                    f'<a href="mailto:{EMAIL}?subject={quote(subj)}">{"Napisz do nas" if pl else "Ask us"}</a>. '
+                    f'{"Przygotujemy wersję i wyślemy Ci e-mail, gdy będzie gotowa w sklepie." if pl else "We’ll prepare it and email you when it’s ready in the shop."}</p>')
     related = [s for s in (EN_ORDER if not pl else PL_ORDER) if PRODUCTS[s]["coll"] == p["coll"] and s != slug][:4]
     if len(related) < 4:
         related += [s for s in (EN_ORDER if not pl else PL_ORDER) if s not in related and s != slug][:4 - len(related)]
@@ -478,6 +488,7 @@ def build_product(slug):
           <li>{ICON["lock"]}{pay}</li>
         </ul>
         {upsell}
+        {lang_req}
       </div>
     </div>
   </div>

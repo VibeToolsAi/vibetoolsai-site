@@ -27,6 +27,17 @@
         apply();
       });
     });
+    Array.prototype.slice.call(document.querySelectorAll('[data-pick]')).forEach(function (a) {
+      a.addEventListener('click', function () {
+        var chip = document.querySelector('.chip[data-filter="' + a.getAttribute('data-pick') + '"]');
+        if (chip) chip.click();
+      });
+    });
+    var go = document.querySelector('[data-go]');
+    if (go) go.addEventListener('click', function () {
+      var shop = document.getElementById('shop') || document.getElementById('sklep');
+      if (shop) shop.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    });
     if (input) {
       input.addEventListener('input', function () {
         apply();

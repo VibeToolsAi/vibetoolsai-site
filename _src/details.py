@@ -120,6 +120,7 @@ DETAILS = {
         "note": "An awareness tool, not legal advice. Your compliance department has the final word.",
     },
     "local-business-ai-playbook": {
+        "translate": True,
         "title": "45 ChatGPT Prompts for Local Service Businesses",
         "seo": "45 ChatGPT prompts for local service businesses: Google Business Profile, review replies, offers, email, SMS, social and local SEO.",
         "lede": "For owners who are great at the work and never get to the marketing: profile posts, review replies, offers and emails, drafted in an afternoon.",
@@ -134,6 +135,7 @@ DETAILS = {
         "note": "Prompts produce drafts for you to check before publishing.",
     },
     "teacher-ai-planner": {
+        "translate": True,
         "title": "45 ChatGPT Prompts for Teachers",
         "seo": "45 ChatGPT prompts for teachers: lesson plans, differentiation, rubrics, parent emails and IEP-friendly adaptations. K-12, any subject.",
         "lede": "Planning shouldn’t eat your Sunday. Prompts with standards, class context, differentiation and accommodations built in.",
@@ -148,6 +150,7 @@ DETAILS = {
         "note": "Prompts produce drafts. Follow your school’s AI and privacy policies.",
     },
     "freelancer-tax-profit-tracker": {
+        "translate": True,
         "title": "Freelancer Tax & Profit Tracker (Excel & Google Sheets)",
         "seo": "Freelancer tax and profit tracker spreadsheet for Excel and Google Sheets: income, expenses, platform fees, tax set-aside and dashboard.",
         "lede": "Enter your numbers once and see what you earned, what the platforms took and what to set aside for tax, month by month.",
@@ -231,6 +234,7 @@ DETAILS = {
         "note": "Prompty tworzą wersje robocze. Decyzje podatkowe konsultuj z księgowym.",
     },
     "ai-w-malej-firmie": {
+        "translate": True,
         "title": "AI w małej firmie. 50 gotowych procesów z ChatGPT i Claude",
         "seo": "Ebook: 50 gotowych procesów AI dla JDG, freelancerów i mikrofirm. Prompty po polsku, przykłady, plan wdrożenia na 14 dni. PDF + DOCX.",
         "lede": "Gotowe procedury zamiast pustego okienka czatu: oferty, odpowiedzi klientom, posty, newsletter i porządek w dokumentach, pod polskie realia.",
@@ -259,6 +263,7 @@ DETAILS = {
         "note": "Prompty tworzą wersje robocze. Nie są poradą prawną.",
     },
     "paliwo-w-15-minut": {
+        "translate": True,
         "title": "Paliwo w 15 minut: 101 szybkich posiłków przed i po treningu",
         "seo": "Ebook: 101 posiłków przed i po treningu w 15 minut, z makro, wersją REDUKCJA i MASA, kosztem porcji i listami zakupów.",
         "lede": "Wracasz z treningu, a na gotowanie masz kwadrans. 101 posiłków ze zwykłych produktów, każdy z policzonym makro i dwiema wersjami gramatur.",
@@ -273,6 +278,7 @@ DETAILS = {
         "note": "To nie jest dieta ani plan odchudzania.",
     },
     "zdrowe-sniadania-sportowiec": {
+        "translate": True,
         "title": "Zdrowe śniadania dla sportowca: 30 przepisów dopasowanych do treningu",
         "seo": "Ebook: 30 śniadań dla trenujących, podzielonych według czasu do treningu, z makro, planami tygodniowymi i szablonami do druku.",
         "lede": "Śniadania ułożone według tego, ile czasu zostało do treningu: 30–90 minut, 2–3 godziny, trening wieczorem albo dzień wolny.",
