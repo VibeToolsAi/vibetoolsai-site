@@ -13,6 +13,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from products import COLLECTIONS, STORE  # noqa: E402
 from details import DETAILS, FREE  # noqa: E402
 from legal import PRIVACY_EN, TERMS_EN, TERMS_PL  # noqa: E402
+from legal_pl import PRIVACY_PL  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DOMAIN = "https://getvibetoolsai.com"
@@ -84,7 +85,7 @@ def page(*, path, lang, title, description, body, alt=None, image=None, jsonld=N
     og_img = f'<meta property="og:image" content="{DOMAIN}/assets/p/{image}.jpg">' if image else ""
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
     js = '<script src="/assets/shop.js" defer></script>' if script else ""
-    legal = ('<a href="/privacy/" lang="en">Polityka prywatności (EN)</a><a href="/terms/#pl">Regulamin</a>' if pl else
+    legal = ('<a href="/pl/polityka-prywatnosci/">Polityka prywatności</a><a href="/terms/#pl">Regulamin</a>' if pl else
              '<a href="/privacy/">Privacy policy</a><a href="/terms/">Terms</a>')
     disclaimer = ("Materiały mają charakter informacyjny i organizacyjny. Nie są poradą prawną, podatkową ani finansową." if pl else
                   "Planners, checklists and prompt packs are informational and organizational tools, not legal, tax or financial advice.")
@@ -519,8 +520,8 @@ def build_product(slug):
                 title=f"{title} · VibeToolsAI", description=seo, body=body)
 
 
-def build_legal(path, lang, title, description, content):
-    return page(path=path, lang=lang, title=title, description=description,
+def build_legal(path, lang, title, description, content, alt=None):
+    return page(path=path, lang=lang, title=title, description=description, alt=alt,
                 body=f'<section class="plain legal"><div class="wrap narrow">{content}</div></section>')
 
 
@@ -542,12 +543,14 @@ def main():
     write("index.html", build_home())
     write("kept-kindly/index.html", build_kept_kindly())
     write("pl/index.html", build_pl())
-    urls = ["/", "/kept-kindly/", "/pl/", "/privacy/", "/terms/"]
+    urls = ["/", "/kept-kindly/", "/pl/", "/privacy/", "/pl/polityka-prywatnosci/", "/terms/"]
     for slug in PRODUCTS:
         write(purl(slug).strip("/") + "/index.html", build_product(slug))
         urls.append(purl(slug))
     write("privacy/index.html", build_legal("/privacy/", "en", "Privacy policy · VibeToolsAI",
-                                           "How VibeToolsAI processes personal data.", PRIVACY_EN))
+                                           "How VibeToolsAI processes personal data.", PRIVACY_EN, alt="/pl/polityka-prywatnosci/"))
+    write("pl/polityka-prywatnosci/index.html", build_legal("/pl/polityka-prywatnosci/", "pl", "Polityka prywatności · VibeToolsAI",
+                                           "Jak VibeToolsAI przetwarza dane osobowe.", PRIVACY_PL, alt="/privacy/"))
     write("terms/index.html", build_legal("/terms/", "en", "Terms · VibeToolsAI",
                                          "Terms for using getvibetoolsai.com and buying VibeToolsAI products.", TERMS_EN + TERMS_PL))
     write("404.html", build_404())

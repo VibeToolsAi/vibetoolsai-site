@@ -1,0 +1,189 @@
+# Polityka prywatności – polskie tłumaczenie wersji 1.3 (treść równoważna wersji angielskiej).
+
+E = '<a href="mailto:hello@getvibetoolsai.com">hello@getvibetoolsai.com</a>'
+
+PRIVACY_PL = f"""
+<h1>Polityka prywatności</h1>
+<p class="meta">Wersja 1.3 · Obowiązuje od 14 listopada 2026 · Zastępuje wersję 1.2 z 11 listopada 2026 ·
+<a href="/privacy/" lang="en">English version</a></p>
+<p>Ta polityka wyjaśnia, jakie dane osobowe przetwarzamy, gdy odwiedzasz tę stronę, zapisujesz się po darmową checklistę lub na nasze e-maile,
+pobierasz lub kupujesz nasze produkty cyfrowe (planery do druku, checklisty, arkusze i zestawy promptów), kontaktujesz się z nami albo korzystasz
+z naszych profili w mediach społecznościowych. Spełnia wymogi art. 13 i 14 RODO, a także amerykańskich (CAN-SPAM) i kanadyjskich (CASL)
+przepisów o e-mailach.</p>
+
+<h2>1. Kim jesteśmy (administrator)</h2>
+<p>Administratorem jest Seweryn Bałchan, prowadzący jednoosobową działalność gospodarczą zarejestrowaną w CEIDG pod firmą GreenGastro Seweryn Bałchan,
+NIP 5170419982, działający pod marką VibeToolsAI („my”).</p>
+<ul><li>Adres do korespondencji (także w sprawach danych osobowych): skrytka pocztowa 419, ul. Asnyka 9, 35-001 Rzeszów</li>
+<li>E-mail we wszystkich sprawach prywatności: {E}</li></ul>
+<p>Nie wyznaczyliśmy inspektora ochrony danych, ponieważ przepisy nie wymagają tego od firmy naszej wielkości i rodzaju. Z każdym pytaniem lub żądaniem
+napisz na powyższy e-mail lub adres.</p>
+
+<h2>2. To, co wpisujesz w planery, nigdy do nas nie trafia</h2>
+<p>Nasze produkty to pliki do pobrania: PDF-y, które drukujesz i wypełniasz ręcznie, oraz arkusze (.xlsx), które otwierasz we własnym Excelu,
+Arkuszach Google lub podobnym programie.</p>
+<ul>
+<li><strong>Wszystko, co wpiszesz w checklistę, planer lub arkusz, zostaje u Ciebie.</strong> Nie otrzymujemy tego, nie przechowujemy ani nie widzimy.
+Pliki nie zawierają śledzenia, formularzy wysyłających dane ani połączenia z nami.</li>
+<li>Część wpisów może być wrażliwa (np. informacje o zdrowiu). Ponieważ ich nie otrzymujemy, nie jesteśmy ich administratorem. Przechowuj wypełnione
+egzemplarze bezpiecznie i udostępniaj je tylko zaufanym osobom.</li>
+<li><strong>Nie wysyłaj nam wypełnionych stron ani ich zdjęć.</strong> Jeśli potrzebujesz pomocy, opisz problem słowami albo wyślij zrzut pustej strony.
+Jeśli mimo to wyślesz wypełnione treści, usuniemy je i nie zachowamy.</li>
+<li>Nasze planery nigdy nie proszą o hasła, PIN-y ani pełne numery rachunków i zalecamy, żeby ich nie zapisywać.</li>
+</ul>
+
+<h2>3. Jakie dane przetwarzamy, w jakim celu i na jakiej podstawie</h2>
+<div class="table"><table>
+<thead><tr><th>Cel</th><th>Dane</th><th>Podstawa prawna (RODO)</th></tr></thead>
+<tbody>
+<tr><td><strong>Wyświetlenie tej strony</strong></td><td>Adres IP, data i godzina, żądana podstrona, typ przeglądarki, zapisywane przez dostawcę hostingu w logach serwera</td>
+<td>Art. 6 ust. 1 lit. f: nasz prawnie uzasadniony interes w bezpiecznym udostępnianiu strony i ochronie przed nadużyciami</td></tr>
+<tr><td><strong>Dostarczenie zamówionej darmowej checklisty</strong> (formularz zapisu, e-mail potwierdzający, link do pobrania)</td>
+<td>Adres e-mail, imię (opcjonalnie), data i godzina zapisu i potwierdzenia, użyty formularz, dane techniczne zapisywane przez MailerLite
+(np. adres IP), kliknięcia w link w e-mailu z plikiem</td>
+<td>Art. 6 ust. 1 lit. b: dostarczenie checklisty, o którą prosisz. Przechowywanie dowodu, że zapis i potwierdzenie były prawdziwe: art. 6 ust. 1 lit. f,
+nasz prawnie uzasadniony interes w zapobieganiu nadużyciom i wykazaniu zgodności z prawem. Kliknięcia w e-mailu z plikiem są rejestrowane, aby
+potwierdzić dostarczenie: art. 6 ust. 1 lit. f; bez profilowania i bez wykorzystania marketingowego</td></tr>
+<tr><td><strong>E-maile marketingowe</strong> (seria powitalna, praktyczny e-mail co tydzień, nowości o produktach, okazjonalne oferty)</td>
+<td>Adres e-mail, imię (jeśli podane), zapis zgody (data, godzina, formularz, wersja treści), status wypisu, kliknięcia w linki w tych e-mailach</td>
+<td>Art. 6 ust. 1 lit. a: <strong>Twoja zgoda</strong>, wyrażona przez zaznaczenie osobnego, domyślnie niezaznaczonego pola w formularzu i potwierdzenie
+e-maila. Zgody na marketing elektroniczny wymaga też art. 398 Prawa komunikacji elektronicznej, a dla odbiorców w Kanadzie – CASL</td></tr>
+<tr><td><strong>Sprzedaż i dostarczanie płatnych produktów</strong> na Gumroad (i na Etsy, jeśli otworzymy tam sklep)</td>
+<td>Imię i nazwisko (jeśli podane), e-mail, kraj, produkt, cena, numer zamówienia, data, status zwrotu – w zakresie udostępnianym przez platformę</td>
+<td>Art. 6 ust. 1 lit. b: wykonanie umowy</td></tr>
+<tr><td><strong>Podatki i księgowość</strong></td><td>Dane zamówień i wypłat</td><td>Art. 6 ust. 1 lit. c: obowiązek prawny wynikający z polskich przepisów podatkowych i o rachunkowości</td></tr>
+<tr><td><strong>Odpowiadanie na wiadomości</strong></td><td>Adres e-mail, imię i nazwisko, treść wiadomości, podane dane zamówienia</td>
+<td>Art. 6 ust. 1 lit. f: nasz prawnie uzasadniony interes w odpowiadaniu na zapytania; art. 6 ust. 1 lit. b, gdy dotyczy Twojego zamówienia</td></tr>
+<tr><td><strong>Roszczenia</strong></td><td>Dane z powyższych kategorii istotne dla roszczenia</td><td>Art. 6 ust. 1 lit. f: ustalenie, dochodzenie lub obrona roszczeń</td></tr>
+<tr><td><strong>Profile w mediach społecznościowych</strong> (Pinterest, X, Instagram)</td><td>Publiczna nazwa profilu, komentarze, wiadomości i zbiorcze statystyki platformy</td>
+<td>Art. 6 ust. 1 lit. f: nasz prawnie uzasadniony interes w prezentowaniu marki i odpowiadaniu osobom, które się z nami kontaktują</td></tr>
+</tbody></table></div>
+<p><strong>Kliknięcia w e-mailach marketingowych.</strong> Jeśli zaznaczysz zgodę, nasz dostawca poczty rejestruje, w które linki klikasz w e-mailach
+marketingowych; obejmuje to Twoja zgoda (art. 6 ust. 1 lit. a), którą możesz wycofać w każdej chwili, wypisując się. Nie śledzimy otwarć e-maili.</p>
+<p><strong>Czy musisz podać dane?</strong> Aby otrzymać darmową checklistę, musisz podać i potwierdzić adres e-mail; imię jest opcjonalne.
+<strong>Zgoda marketingowa jest dobrowolna: checklistę dostajesz niezależnie od tego, czy zaznaczysz pole.</strong> Do zakupu platforma sprzedażowa
+potrzebuje Twojego e-maila, aby dostarczyć produkt.</p>
+
+<h2>4. Podwójne potwierdzenie, wypisanie się, wycofanie zgody</h2>
+<ul>
+<li><strong>Podwójne potwierdzenie.</strong> Po wysłaniu formularza dostajesz e-mail z prośbą o potwierdzenie. Dodajemy Cię dopiero po kliknięciu linku.
+Jeśli nie potwierdzisz, nic więcej nie wysyłamy, a niepotwierdzony zapis usuwamy z listy w ciągu 30 dni od zapisu, a dostawca poczty trwale go kasuje
+w ciągu kolejnych 30 dni (sekcja 8).</li>
+<li><strong>Wypisanie się.</strong> Każdy e-mail marketingowy ma link do wypisania się działający jednym kliknięciem. Możesz też odpisać „unsubscribe”
+lub napisać na {E}. Działamy niezwłocznie; zgodnie z CASL i CAN-SPAM najpóźniej w ciągu 10 dni roboczych.</li>
+<li><strong>Wycofanie zgody</strong> jest bezpłatne i możliwe w każdej chwili. Nie wpływa na e-maile wysłane wcześniej, a checklista i kupione produkty zostają u Ciebie.</li>
+</ul>
+
+<h2>5. Ta strona, strona zapisu i pliki cookie</h2>
+<ul>
+<li><strong>Ta strona</strong> (getvibetoolsai.com) to strona statyczna hostowana przez <strong>GitHub Pages</strong>. <strong>Nie ustawia plików cookie</strong>,
+nie używa <strong>żadnej analityki, reklam ani śledzenia mediów społecznościowych</strong> i nie wczytuje czcionek, skryptów ani obrazów od innych firm.
+GitHub zapisuje dane techniczne wymienione w sekcji 3 w logach serwera, aby udostępniać i zabezpieczać stronę.</li>
+<li>Naszą stronę i formularz zapisu hostuje <strong>MailerLite</strong> pod adresem MailerLite. MailerLite może używać plików cookie lub podobnych technologii,
+które są niezbędne do wyświetlenia strony, wysłania formularza i ochrony przed spamem. Nie wymagają one zgody według przepisów UE.
+Szczegóły: <a href="https://www.mailerlite.com/legal/privacy-policy">polityka prywatności MailerLite</a> (sekcja „Tracking technologies”).</li>
+<li><strong>Nie dodajemy analityki, reklam ani śledzenia mediów społecznościowych (bez Google Analytics, bez pikseli Meta czy Pinterest) do tej strony ani do
+strony zapisu.</strong> Jeśli kiedyś to zrobimy, najpierw poprosimy o zgodę banerem cookie i zaktualizujemy tę politykę.</li>
+<li>Linki do produktów zawierają oznaczenie (np. <code>utm_source=getvibetoolsai</code>), które informuje Gumroad, że wizyta pochodzi z tej strony.
+Nie zawiera ono danych osobowych.</li>
+<li>Strony produktów i kasę hostuje Gumroad (oraz Etsy, jeśli z niego skorzystamy) – obowiązują tam ich własne zasady dotyczące cookie.</li>
+</ul>
+
+<h2>6. Kto otrzymuje Twoje dane</h2>
+<p>Udostępniamy dane tylko w zakresie potrzebnym do powyższych celów.</p>
+<ul>
+<li><strong>GitHub, Inc.</strong> (USA) – hostuje tę stronę (GitHub Pages) i przetwarza logi serwera zgodnie z
+<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</li>
+<li><strong>MailerLite</strong> – nasz dostawca poczty, działający jako <strong>podmiot przetwarzający</strong>. Hostuje stronę i formularz zapisu, wysyła
+e-maile potwierdzające, z plikami i marketingowe oraz przechowuje w naszym imieniu listę subskrybentów i zapisy zgód na podstawie
+<a href="https://www.mailerlite.com/legal/data-processing-agreement">umowy powierzenia (DPA)</a>. Podmiot umowny dla klientów z EOG według polityki
+prywatności MailerLite: <strong>MailerLite Limited, 88 Harcourt Street, Dublin 2, D02 DK18, Irlandia</strong>. Podprocesorzy z załącznika 4 do DPA
+(aktualizacja 10 lipca 2026): Google Cloud EMEA Ltd (Irlandia; centra danych w Niemczech i Holandii) oraz Vercom S.A. (Poznań).</li>
+<li><strong>OVH</strong> – dostawca naszej skrzynki hello@getvibetoolsai.com i domeny tej strony. Przechowuje e-maile, które do nas wysyłasz. OVH SAS, Roubaix, Francja.</li>
+<li><strong>Notion Labs, Inc.</strong> (USA) – używamy Notion do notatek wewnętrznych; wcześniejsze wersje tej polityki były tam publikowane.</li>
+<li><strong>Gumroad, Inc.</strong> (USA) – platforma sprzedażowa. Samodzielny administrator jako merchant of record (płatności, podatki, zapobieganie oszustwom:
+<a href="https://gumroad.com/privacy">gumroad.com/privacy</a>) oraz nasz podmiot przetwarzający w zakresie hostowania i dostarczania plików oraz listy
+klientów (<a href="https://gumroad.com/dpa">gumroad.com/dpa</a>).</li>
+<li><strong>Etsy</strong> – tylko jeśli otworzymy tam sklep; Etsy działa wtedy według własnej polityki prywatności.</li>
+<li><strong>Buffer, Inc.</strong> (USA) – narzędzie do planowania postów; podmiot przetwarzający dla danych widocznych w Bufferze.</li>
+<li><strong>Pinterest, X i Meta (Instagram)</strong> – samodzielni administratorzy danych przetwarzanych na ich platformach, według własnych polityk.
+W przypadku statystyk „Insights” na Instagramie Meta traktuje przetwarzanie jako współadministrowanie z nami zgodnie z Page Insights Controller Addendum;
+żądania dotyczące tych danych obsługuje Meta, a te, które otrzymamy, przekazujemy dalej.</li>
+<li><strong>Księgowi lub doradcy podatkowi</strong>, jeśli z nich korzystamy, oraz <strong>organy publiczne</strong>, gdy wymaga tego prawo.</li>
+</ul>
+<p><strong>Nie sprzedajemy ani nie wynajmujemy Twoich danych</strong> i nie udostępniamy ich do reklamy behawioralnej.</p>
+
+<h2>7. Przekazywanie danych poza Europejski Obszar Gospodarczy (w tym do USA)</h2>
+<p>Niektórzy odbiorcy znajdują się w <strong>Stanach Zjednoczonych</strong> lub mogą mieć stamtąd dostęp do danych. Przekazujemy dane poza EOG tylko
+z zabezpieczeniami z rozdziału V RODO: na podstawie <strong>Ramowych zasad ochrony danych UE–USA</strong> (decyzja Komisji Europejskiej z 10 lipca 2023)
+dla certyfikowanych odbiorców lub <strong>standardowych klauzul umownych</strong> Komisji Europejskiej (decyzja (UE) 2021/914).</p>
+<p>Według naszej wiedzy na 14 listopada 2026:</p>
+<ul>
+<li><strong>GitHub:</strong> GitHub, Inc. deklaruje udział w Ramowych zasadach ochrony danych UE–USA i oferuje standardowe klauzule umowne w swojej umowie o ochronie danych.</li>
+<li><strong>MailerLite:</strong> dane subskrybentów są przechowywane w UE. DPA MailerLite zawiera standardowe klauzule umowne (administrator–podmiot przetwarzający,
+załącznik 3) z <strong>MailerLite, Inc.</strong> (USA) jako importerem danych, a MailerLite, Inc. deklaruje certyfikację w Ramowych zasadach ochrony danych UE–USA.</li>
+<li><strong>Notion Labs, Inc.:</strong> na liście Data Privacy Framework; DPA Notion zawiera też standardowe klauzule umowne UE i Wielkiej Brytanii.</li>
+<li><strong>Gumroad:</strong> standardowe klauzule umowne w DPA.</li>
+<li><strong>Buffer:</strong> Ramowe zasady ochrony danych UE–USA i/lub standardowe klauzule umowne.</li>
+<li><strong>OVH:</strong> dostawca z UE (Francja); przekazywanie nie jest przewidywane.</li>
+<li><strong>Pinterest, X i Meta</strong> jako samodzielni administratorzy wybierają własne mechanizmy przekazywania.</li>
+</ul>
+<p>Więcej informacji o tych zabezpieczeniach udzielimy pod adresem {E}.</p>
+
+<h2>8. Jak długo przechowujemy dane</h2>
+<ul>
+<li><strong>Logi serwera strony:</strong> przechowuje je GitHub przez okres określony w jego polityce, w celach bezpieczeństwa; sami ich nie pobieramy ani nie przechowujemy.</li>
+<li><strong>Niepotwierdzone zapisy:</strong> usuwane z listy w ciągu 30 dni od zapisu i trwale kasowane przez dostawcę poczty w ciągu kolejnych 30 dni.</li>
+<li><strong>Zapisy tylko po checklistę</strong> (potwierdzone, bez zgody marketingowej): usuwane z listy <strong>w ciągu 30 dni od potwierdzenia</strong> i trwale
+kasowane przez dostawcę poczty w ciągu kolejnych 30 dni.</li>
+<li><strong>Subskrybenci marketingowi:</strong> do wypisania się lub wycofania zgody. Potem zachowujemy minimalny zapis (e-mail, daty zgody i wycofania, wersja treści),
+aby wykazać, że uszanowaliśmy Twój wybór i nie pisać do Ciebie ponownie – nie dłużej niż okres przedawnienia roszczeń (co do zasady do 6 lat).</li>
+<li><strong>Dane zamówień i dostaw:</strong> tak długo, jak to potrzebne do dostarczenia produktu i wsparcia, a następnie do przedawnienia roszczeń
+(co do zasady do 6 lat; 3 lata dla roszczeń związanych z działalnością gospodarczą).</li>
+<li><strong>Dokumentacja podatkowa i księgowa:</strong> zgodnie z przepisami podatkowymi, co do zasady 5 lat od końca roku kalendarzowego, w którym upłynął termin płatności podatku.</li>
+<li><strong>Twoje e-maile do nas:</strong> do 3 lat od ostatniego kontaktu, chyba że są potrzebne dłużej ze względu na roszczenie lub obowiązek prawny.</li>
+<li><strong>Interakcje w mediach społecznościowych:</strong> tak długo, jak treść pozostaje na platformie; obowiązują zasady platformy.</li>
+</ul>
+
+<h2>9. Twoje prawa</h2>
+<p>Zgodnie z RODO masz prawo do: <strong>dostępu</strong> do danych i otrzymania ich kopii (art. 15); <strong>sprostowania</strong> (art. 16);
+<strong>usunięcia</strong> (art. 17); <strong>ograniczenia</strong> przetwarzania (art. 18); <strong>przenoszenia danych</strong> przetwarzanych
+automatycznie na podstawie zgody lub umowy (art. 20); <strong>sprzeciwu</strong> wobec przetwarzania opartego na naszym prawnie uzasadnionym interesie
+(art. 21 ust. 1), a <strong>w każdej chwili</strong> wobec marketingu bezpośredniego (art. 21 ust. 2); <strong>wycofania zgody</strong> w dowolnym momencie,
+bez wpływu na wcześniejsze przetwarzanie (art. 7 ust. 3).</p>
+<p>Aby skorzystać z praw, napisz na {E}. Odpowiadamy w ciągu miesiąca (z możliwością przedłużenia w przypadkach z art. 12 ust. 3 RODO). Możemy poprosić
+o informacje potrzebne do potwierdzenia tożsamości, np. adres e-mail użyty przy zapisie.</p>
+<p><strong>Skarga.</strong> Możesz złożyć skargę do <strong>Prezesa Urzędu Ochrony Danych Osobowych (PUODO)</strong>, ul. Stawki 2, 00-193 Warszawa,
+<a href="https://uodo.gov.pl/">uodo.gov.pl</a>, albo do organu nadzorczego w państwie UE/EOG, w którym mieszkasz, pracujesz lub w którym doszło
+do domniemanego naruszenia.</p>
+
+<h2>10. Odbiorcy w Stanach Zjednoczonych i Kanadzie</h2>
+<ul>
+<li><strong>Stany Zjednoczone (CAN-SPAM Act).</strong> Nasze e-maile handlowe wskazują nas jako nadawcę, mają rzetelne tematy, zawierają nasz adres
+pocztowy (skrytka pocztowa 419, ul. Asnyka 9, 35-001 Rzeszów, Polska) i działający link do wypisania się, a wypisy realizujemy w ciągu 10 dni roboczych.
+E-maile, które tylko dostarczają to, o co prosisz (potwierdzenie i pobranie checklisty), są transakcyjne.</li>
+<li><strong>Kalifornia.</strong> Nie sprzedajemy ani nie udostępniamy danych osobowych; żądania obsługujemy jak w sekcji 9.</li>
+<li><strong>Kanada (CASL).</strong> E-maile handlowe do odbiorców w Kanadzie wysyłamy tylko za wyraźną zgodą, którą rejestrujemy (data, godzina, formularz,
+treść). Każdy e-mail wskazuje nas, podaje adres pocztowy i e-mail oraz ma link do wypisania się działający co najmniej 60 dni od wysłania; wypisy
+realizujemy w ciągu 10 dni roboczych.</li>
+</ul>
+
+<h2>11. Zautomatyzowane decyzje, dzieci, bezpieczeństwo</h2>
+<ul>
+<li><strong>Nie podejmujemy zautomatyzowanych decyzji</strong> wywołujących skutki prawne lub podobnie istotne (art. 22 RODO).</li>
+<li><strong>Dzieci.</strong> Nasze produkty i e-maile są przeznaczone dla dorosłych. Nie zbieramy świadomie danych dzieci poniżej 16 lat. Jeśli uważasz,
+że zapisało się dziecko, skontaktuj się z nami, a usuniemy dane.</li>
+<li><strong>Bezpieczeństwo.</strong> Używamy silnych, unikalnych haseł i weryfikacji dwuetapowej tam, gdzie to możliwe, ograniczamy dostęp i przechowujemy
+tylko potrzebne dane. Strona jest udostępniana wyłącznie przez szyfrowane połączenie (HTTPS).</li>
+</ul>
+
+<h2>12. Zmiany polityki</h2>
+<p>Zaktualizujemy tę politykę, jeśli zaczniemy używać nowych narzędzi lub zmienimy sposób przetwarzania danych. Aktualna wersja i jej data są zawsze pod
+adresem <a href="https://getvibetoolsai.com/pl/polityka-prywatnosci/">getvibetoolsai.com/pl/polityka-prywatnosci</a> (wersja angielska:
+<a href="https://getvibetoolsai.com/privacy/">getvibetoolsai.com/privacy</a>). O istotnych zmianach poinformujemy subskrybentów e-mailem.</p>
+
+<h2>13. Kontakt</h2>
+<p>Seweryn Bałchan, jednoosobowa działalność gospodarcza zarejestrowana w CEIDG pod firmą GreenGastro Seweryn Bałchan, NIP 5170419982, marka VibeToolsAI.
+Adres do korespondencji (także w sprawach danych osobowych): skrytka pocztowa 419, ul. Asnyka 9, 35-001 Rzeszów · {E}</p>
+<p><em>Nasze checklisty, planery i zestawy promptów mają charakter informacyjny i organizacyjny; nie stanowią porady prawnej, podatkowej ani finansowej.</em></p>
+"""
