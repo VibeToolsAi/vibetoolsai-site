@@ -35,6 +35,9 @@ COLLECTIONS = [
              "text": "An estate settlement tracker for executors: tasks, assets, debts, income and "
                      "an expense log with running totals."},
         ],
+        "free": [
+            {"slug": "hlzeqi", "name": "Where It All Is: Family Document Sheet"},
+        ],
     },
     {
         "id": "ai-prompts",
@@ -68,6 +71,7 @@ COLLECTIONS = [
             {"slug": "free-small-business-prompts", "name": "7 Free Prompts for Small Business"},
             {"slug": "free-teacher-prompts", "name": "7 Free Prompts for Teachers"},
             {"slug": "oytvfx", "name": "5 AI Processes for Your First Week in Business"},
+            {"slug": "dmiiwi", "name": "The 10-Job AI Test for Small Business"},
         ],
     },
     {

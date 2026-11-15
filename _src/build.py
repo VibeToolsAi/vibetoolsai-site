@@ -218,7 +218,7 @@ EN_ORDER = ["before-after-legacy-bundle", "kept-kindly-legacy-planner", "after-d
             "realtor-ai-playbook", "loan-officer-ai-playbook", "local-business-ai-playbook", "teacher-ai-planner",
             "realtor-mini-25", "freelancer-tax-profit-tracker",
             "free-tax-set-aside-calculator", "listing-prompts-free", "free-realtor-prompts", "free-loan-officer-prompts",
-            "free-small-business-prompts", "free-teacher-prompts", "oytvfx"]
+            "free-small-business-prompts", "free-teacher-prompts", "oytvfx", "dmiiwi", "hlzeqi"]
 PL_ORDER = ["fzjwvr", "zestaw-wdrozeniowy-ksef", "teczka-ksiegowy-ksef", "ksef-toolkit-jdg", "ai-w-malej-firmie",
             "agent-nieruchomosci-25-promptow", "paliwo-w-15-minut", "zdrowe-sniadania-sportowiec",
             "free-ksef-licznik-10k", "hwdanj", "ogloszenie-ktore-sprzedaje"]
@@ -357,7 +357,7 @@ def build_kept_kindly():
     faq = "".join(f"<details><summary>{e(a)}</summary><p>{b}</p></details>" for a, b in q)
     cards = "\n".join(card(s, "kept-kindly") for s in ["before-after-legacy-bundle", "kept-kindly-legacy-planner",
                                                          "after-death-checklist", "executor-checklist",
-                                                         "kept-kindly-caregiver-binder"])
+                                                         "kept-kindly-caregiver-binder", "hlzeqi"])
     body = f"""
 <section class="hero hero-kk tab-plum">
   <div class="wrap hero-in">
