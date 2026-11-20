@@ -2,7 +2,7 @@
 """Generates the static site for getvibetoolsai.com into the repo root.
 
 Run:  python3 -B _src/build.py
-No dependencies. No third-party requests in the output (no fonts, analytics or scripts from other hosts).
+No dependencies. Only third-party request in the output: Cloudflare Web Analytics (cookieless). No fonts or other scripts from other hosts.
 """
 import html
 import json
@@ -133,6 +133,7 @@ def page(*, path, lang, title, description, body, alt=None, image=None, jsonld=N
     <p class="foot-links">{legal}<a href="https://vibetoolsai.gumroad.com/?utm_source=getvibetoolsai&amp;utm_medium=website&amp;utm_campaign=footer">{"Sklep na Gumroad" if pl else "Shop on Gumroad"}</a></p></div>
   </div>
 </footer>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "9d51a0df89e349e8a72bfd030b526cf3"}}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
 """
