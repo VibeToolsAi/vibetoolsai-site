@@ -4,7 +4,7 @@ E = '<a href="mailto:hello@getvibetoolsai.com">hello@getvibetoolsai.com</a>'
 
 PRIVACY_PL = f"""
 <h1>Polityka prywatności</h1>
-<p class="meta">Wersja 1.3 · Obowiązuje od 14 listopada 2026 · Zastępuje wersję 1.2 z 11 listopada 2026 ·
+<p class="meta">Wersja 1.3 · Obowiązuje od 14 listopada 2026 · Zaktualizowano 20 listopada 2026 (sekcja 5: statystyki odwiedzin) · Zastępuje wersję 1.2 z 11 listopada 2026 ·
 <a href="/privacy/" lang="en">English version</a></p>
 <p>Ta polityka wyjaśnia, jakie dane osobowe przetwarzamy, gdy odwiedzasz tę stronę, zapisujesz się po darmową checklistę lub na nasze e-maile,
 pobierasz lub kupujesz nasze produkty cyfrowe (planery do druku, checklisty, arkusze i zestawy promptów), kontaktujesz się z nami albo korzystasz
@@ -77,12 +77,17 @@ lub napisać na {E}. Działamy niezwłocznie; zgodnie z CASL i CAN-SPAM najpóź
 <h2>5. Ta strona, strona zapisu i pliki cookie</h2>
 <ul>
 <li><strong>Ta strona</strong> (getvibetoolsai.com) to strona statyczna hostowana przez <strong>GitHub Pages</strong>. <strong>Nie ustawia plików cookie</strong>,
-nie używa <strong>żadnej analityki, reklam ani śledzenia mediów społecznościowych</strong> i nie wczytuje czcionek, skryptów ani obrazów od innych firm.
+nie używa <strong>reklam ani śledzenia mediów społecznościowych</strong> i nie wczytuje czcionek ani obrazów od innych firm.
 GitHub zapisuje dane techniczne wymienione w sekcji 3 w logach serwera, aby udostępniać i zabezpieczać stronę.</li>
 <li>Naszą stronę i formularz zapisu hostuje <strong>MailerLite</strong> pod adresem MailerLite. MailerLite może używać plików cookie lub podobnych technologii,
 które są niezbędne do wyświetlenia strony, wysłania formularza i ochrony przed spamem. Nie wymagają one zgody według przepisów UE.
 Szczegóły: <a href="https://www.mailerlite.com/legal/privacy-policy">polityka prywatności MailerLite</a> (sekcja „Tracking technologies”).</li>
-<li><strong>Nie dodajemy analityki, reklam ani śledzenia mediów społecznościowych (bez Google Analytics, bez pikseli Meta czy Pinterest) do tej strony ani do
+<li><strong>Statystyki odwiedzin:</strong> korzystamy z <strong>Cloudflare Web Analytics</strong>, żeby liczyć wyświetlenia stron i sprawdzać, które strony
+i źródła wejść są popularne. Narzędzie <strong>nie ustawia plików cookie</strong>, nie korzysta z pamięci przeglądarki, nie tworzy Twojego profilu i nie śledzi Cię
+na innych stronach. Zapisuje dane techniczne o każdym wyświetleniu (adres strony, stronę odsyłającą, typ przeglądarki, kraj i czas), a nam pokazuje tylko zbiorcze
+statystyki. Podstawa prawna: nasz prawnie uzasadniony interes w poznaniu sposobu korzystania ze strony (art. 6 ust. 1 lit. f RODO). Szczegóły:
+<a href="https://www.cloudflare.com/privacypolicy/">polityka prywatności Cloudflare</a>.</li>
+<li><strong>Nie dodajemy reklam ani śledzenia mediów społecznościowych (bez Google Analytics, bez pikseli Meta czy Pinterest) do tej strony ani do
 strony zapisu.</strong> Jeśli kiedyś to zrobimy, najpierw poprosimy o zgodę banerem cookie i zaktualizujemy tę politykę.</li>
 <li>Linki do produktów zawierają oznaczenie (np. <code>utm_source=getvibetoolsai</code>), które informuje Gumroad, że wizyta pochodzi z tej strony.
 Nie zawiera ono danych osobowych.</li>
