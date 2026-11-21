@@ -2,7 +2,7 @@
 """Generates the static site for getvibetoolsai.com into the repo root.
 
 Run:  python3 -B _src/build.py
-No dependencies. No third-party requests in the output (no fonts, analytics or scripts from other hosts).
+No dependencies. Only third-party request in the output: Cloudflare Web Analytics (cookieless). No fonts or other scripts from other hosts.
 """
 import html
 import json
@@ -11,6 +11,7 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from products import COLLECTIONS, STORE  # noqa: E402
+from stripe_links import STRIPE_LINKS  # noqa: E402
 from details import DETAILS, FREE  # noqa: E402
 from legal import PRIVACY_EN, TERMS_EN, TERMS_PL  # noqa: E402
 from legal_pl import PRIVACY_PL  # noqa: E402
@@ -46,6 +47,8 @@ def purl(slug):
 
 
 def buy_url(slug, campaign):
+    if slug in STRIPE_LINKS:
+        return f"{STRIPE_LINKS[slug]}?utm_source=getvibetoolsai&utm_medium=website&utm_campaign={campaign}"
     return f"{STORE}{slug}?utm_source=getvibetoolsai&utm_medium=website&utm_campaign={campaign}"
 
 
@@ -133,6 +136,7 @@ def page(*, path, lang, title, description, body, alt=None, image=None, jsonld=N
     <p class="foot-links">{legal}<a href="https://vibetoolsai.gumroad.com/?utm_source=getvibetoolsai&amp;utm_medium=website&amp;utm_campaign=footer">{"Sklep na Gumroad" if pl else "Shop on Gumroad"}</a></p></div>
   </div>
 </footer>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "9d51a0df89e349e8a72bfd030b526cf3"}}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
 """
@@ -161,13 +165,13 @@ def card(slug, campaign):
 
 
 def trust(pl=False):
-    items = ([("download", "Natychmiastowe pobranie", "Link w mailu od razu po zakupie"),
+    items = ([("download", "Natychmiastowe pobranie", "Pliki od razu po zapłacie"),
               ("print", "Do druku i do edycji", "PDF oraz arkusze Excel / Google"),
-              ("lock", "Bezpieczna płatność", "Kasa i podatki: Gumroad"),
+              ("lock", "Bezpieczna płatność", "Karta, BLIK, Revolut Pay; podatki rozlicza Stripe"),
               ("sheet", "Twoje dane zostają u Ciebie", "Pliki bez śledzenia")] if pl else
-             [("download", "Instant digital download", "Files arrive by email right after checkout"),
+             [("download", "Instant digital download", "Your files open right after payment"),
               ("print", "Print it or fill it in", "PDF in US Letter + A4, plus spreadsheets"),
-              ("lock", "Secure checkout", "Payment and sales tax handled by Gumroad"),
+              ("lock", "Secure checkout", "Secure Stripe checkout; sales tax handled for you"),
               ("sheet", "Your details stay with you", "No tracking inside the files")])
     lis = "".join(f'<li>{ICON[i]}<span><strong>{e(a)}</strong>{e(b)}</span></li>' for i, a, b in items)
     return f'<ul class="trust" aria-label="{"Jak to działa" if pl else "How it works"}">{lis}</ul>'
@@ -279,8 +283,8 @@ def build_home():
     <div>
       <h2>How buying works</h2>
       <ol class="steps">
-        <li><strong>Pick a product</strong> and check out on Gumroad, our sales platform.</li>
-        <li><strong>Download the files</strong> from the receipt email or your Gumroad library.</li>
+        <li><strong>Pick a product</strong> and pay with secure Stripe checkout (card, Apple Pay, Google Pay and more).</li>
+        <li><strong>Download the files</strong> from the folder that opens right after payment. Save them or bookmark the folder.</li>
         <li><strong>Print or open</strong> them in Excel, Google Sheets or Numbers.</li>
       </ol>
       <p><a href="/pl/" lang="pl">Produkty po polsku: KSeF, AI w firmie, sport</a></p>
@@ -325,8 +329,9 @@ def build_pl():
     </div>
     <div id="ai-firma">
       <h2>Zakup i kontakt</h2>
-      <p>Płatność obsługuje Gumroad, który sprzedaje produkty jako pośrednik (merchant of record). Po zakupie dostajesz e-mail
-      z linkiem do plików. Pytania i problemy: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+      <p>Płatność obsługuje Stripe, który rozlicza sprzedaż i podatki jako pośrednik (merchant of record). Zapłacisz kartą, BLIK-iem
+      lub Revolut Pay. Po zapłacie od razu otwiera się folder z plikami, a potwierdzenie zakupu przychodzi e-mailem. Zgubiony link,
+      pytania i problemy: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
     </div>
   </div>
 </section>
@@ -447,7 +452,7 @@ def build_product(slug):
     chips = "".join(f"<li>{e(s)}</li>" for s in specs)
     inside_html = ("<h2>" + ("Co jest w środku" if pl else "What’s inside") + "</h2><ul class=\"inside\">" +
                    "".join(f"<li>{ICON['check']}<span>{e(x)}</span></li>" for x in inside) + "</ul>") if inside else ""
-    buy_label = ("Pobierz za darmo" if pl else "Get it free") if p["free"] else ("Kup na Gumroad" if pl else "Buy on Gumroad")
+    buy_label = ("Pobierz za darmo" if pl else "Get it free") if p["free"] else (("Kup teraz" if pl else "Buy now") if slug in STRIPE_LINKS else ("Kup na Gumroad" if pl else "Buy on Gumroad"))
     up = p.get("upsell")
     upsell = ""
     if up:
@@ -467,7 +472,16 @@ def build_product(slug):
     rel = "\n".join(card(s, f"related-{slug}") for s in related)
     crumb_home = "/pl/" if pl else "/"
     dl = ("Natychmiastowe pobranie" if pl else "Instant digital download")
-    pay = ("Płatność i podatki obsługuje Gumroad" if pl else "Secure checkout on Gumroad; sales tax handled for you")
+    pay = (("Bezpieczna płatność Stripe: karta, BLIK, Revolut Pay" if pl else "Secure Stripe checkout; sales tax handled for you") if slug in STRIPE_LINKS
+           else ("Płatność i podatki obsługuje Gumroad" if pl else "Secure checkout on Gumroad; sales tax handled for you"))
+    if p["free"] or slug not in STRIPE_LINKS:
+        delivery = ("Po zakupie Gumroad wysyła e-mail z linkiem do plików. Pliki są też w Twojej bibliotece Gumroad." if pl else
+                    "After checkout Gumroad emails you a download link, and the files stay in your Gumroad library.")
+    else:
+        delivery = ("Po zapłacie od razu otwiera się folder z plikami. Zapisz je albo dodaj folder do zakładek. Potwierdzenie zakupu "
+                    f"przychodzi e-mailem od Stripe. Zgubiony link? Napisz na {EMAIL}, wyślemy go ponownie." if pl else
+                    "Right after payment your download folder opens. Save the files or bookmark the folder. Stripe emails your receipt. "
+                    f"Lost the link? Email {EMAIL} and we’ll send it again.")
     guarantee = ("Plik nie działa albo nie zgadza się z opisem? Napisz w ciągu 14 dni, poprawimy go lub zwrócimy pieniądze."
                  if pl else "File broken or not as described? Email within 14 days and we’ll fix, replace or refund it.")
     amount, cur = price_number(p)
@@ -475,7 +489,7 @@ def build_product(slug):
           "image": f"{DOMAIN}/assets/p/{main}.jpg" if main else None,
           "brand": {"@type": "Brand", "name": "VibeToolsAI"},
           "offers": {"@type": "Offer", "price": f"{amount:.2f}", "priceCurrency": cur,
-                     "availability": "https://schema.org/InStock", "url": f"{STORE}{slug}"}}
+                     "availability": "https://schema.org/InStock", "url": f"{DOMAIN}{purl(slug)}"}}
     body = f"""
 <section class="product tab-{p["color"]}">
   <div class="wrap">
@@ -504,8 +518,7 @@ def build_product(slug):
     <div>{inside_html}</div>
     <div>
       <details open><summary>{"Jak to działa" if pl else "How it works"}</summary>
-        <p>{"Po zakupie Gumroad wysyła e-mail z linkiem do plików. Pliki są też w Twojej bibliotece Gumroad." if pl else
-            "After checkout Gumroad emails you a download link, and the files stay in your Gumroad library."}</p></details>
+        <p>{delivery}</p></details>
       <details><summary>{"Zwroty" if pl else "Refunds"}</summary><p>{e(guarantee)}</p></details>
       {f'<details><summary>{"Ważne" if pl else "Good to know"}</summary><p>{e(note)}</p></details>' if note else ""}
       <details><summary>{"Sprzedawca" if pl else "Seller"}</summary><p>{e(SELLER_PL if pl else SELLER)}. <a href="mailto:{EMAIL}">{EMAIL}</a></p></details>

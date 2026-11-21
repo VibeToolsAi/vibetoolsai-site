@@ -1,11 +1,12 @@
 # Legal pages. Privacy policy = Notion v1.2 (11 Nov 2026) adapted for this website as v1.3.
+# v1.4 (21 Nov 2026): Cloudflare Web Analytics in section 5; Stripe Managed Payments and Google Drive file delivery added in sections 3, 5, 6, 7.
 # Changes vs 1.2: website hosting (GitHub Pages) added in sections 5, 6 and 7; policy URL in section 12.
 
 E = '<a href="mailto:hello@getvibetoolsai.com">hello@getvibetoolsai.com</a>'
 
 PRIVACY_EN = f"""
 <h1>Privacy policy</h1>
-<p class="meta">Version 1.3 · Effective 14 November 2026 · Replaces version 1.2 of 11 November 2026 · <a href="/pl/polityka-prywatnosci/" lang="pl">Wersja polska</a></p>
+<p class="meta">Version 1.4 · Effective 21 November 2026 · Replaces version 1.3 of 14 November 2026 · <a href="/pl/polityka-prywatnosci/" lang="pl">Wersja polska</a></p>
 <p>This policy explains what personal data we process when you visit this website, sign up for our free checklist or our emails,
 download or buy our digital products (printable planners, checklists, spreadsheets and prompt packs), contact us, or interact with our
 social media profiles. It is written to meet Articles 13 and 14 of the EU General Data Protection Regulation (GDPR) and also covers
@@ -48,8 +49,8 @@ confirm delivery: Art. 6(1)(f); no profiling and no marketing use</td></tr>
 <td>Email address, first name (if given), consent record (date, time, form, wording version), unsubscribe status, clicks on links in these emails</td>
 <td>Art. 6(1)(a): <strong>your consent</strong>, given by ticking the separate, unticked box on the form and confirming your email. Consent to electronic
 marketing is also required by Art. 398 of the Polish Electronic Communications Law and, for recipients in Canada, by CASL</td></tr>
-<tr><td><strong>Selling and delivering paid products</strong> on Gumroad (and Etsy, if we open a shop there)</td>
-<td>Name (if given), email, country, product, price, order ID, date, refund status, as made available by the platform</td>
+<tr><td><strong>Selling and delivering paid products</strong> through Stripe checkout on this website or on Gumroad (and Etsy, if we open a shop there)</td>
+<td>Name (if given), email, country, product, price, order ID, date, refund status, as made available by Stripe or the platform</td>
 <td>Art. 6(1)(b): performance of a contract</td></tr>
 <tr><td><strong>Tax and accounting</strong></td><td>Order and payout records</td><td>Art. 6(1)(c): legal obligation under Polish tax and accounting law</td></tr>
 <tr><td><strong>Answering your messages</strong></td><td>Email address, name, content of your message, order details you give us</td>
@@ -77,16 +78,21 @@ We act on it promptly; under CASL and CAN-SPAM, within 10 business days at the l
 <h2>5. This website, our sign-up page and cookies</h2>
 <ul>
 <li><strong>This website</strong> (getvibetoolsai.com) is a static site hosted by <strong>GitHub Pages</strong>. It sets <strong>no cookies</strong>, uses
-<strong>no analytics, advertising or social media tracking</strong> and loads no fonts, scripts or images from other companies. GitHub records the
+<strong>no advertising or social media tracking</strong> and loads no fonts or images from other companies. GitHub records the
 technical data listed in section 3 in its server logs to deliver and secure the site.</li>
 <li>Our sign-up page and form are hosted by <strong>MailerLite</strong> on a MailerLite web address. MailerLite may use cookies or similar technologies
 that are strictly necessary to display the page, submit the form and protect it from spam and abuse. These do not require consent under EU rules.
 Details: <a href="https://www.mailerlite.com/legal/privacy-policy">MailerLite’s privacy policy</a> (see “Tracking technologies”).</li>
-<li><strong>We do not add analytics, advertising or social media tracking (no Google Analytics, no Meta or Pinterest pixel) to this website or the sign-up
+<li><strong>Visitor statistics:</strong> we use <strong>Cloudflare Web Analytics</strong> to count page views and see which pages and referring websites
+are popular. It sets <strong>no cookies</strong>, does not use local storage, does not create a profile of you and does not track you across websites. It records
+technical data about each page view (page address, referring page, browser type, country and timing) and shows us only aggregated statistics. Our legal basis is
+our legitimate interest in understanding how the site is used (Art. 6(1)(f) GDPR). Details:
+<a href="https://www.cloudflare.com/privacypolicy/">Cloudflare’s privacy policy</a>.</li>
+<li><strong>We do not add advertising or social media tracking (no Google Analytics, no Meta or Pinterest pixel) to this website or the sign-up
 page.</strong> If we ever do, we will ask for your consent first with a cookie banner and update this policy.</li>
-<li>Links to products include a label (for example <code>utm_source=getvibetoolsai</code>) that tells Gumroad the visit came from this website. It contains no
+<li>Links to products include a label (for example <code>utm_source=getvibetoolsai</code>) that tells Gumroad or Stripe the visit came from this website. It contains no
 personal data.</li>
-<li>Product pages and checkout are hosted by Gumroad (and Etsy, if used), whose own cookie policies apply there.</li>
+<li>Checkout pages are hosted by <strong>Stripe</strong> (buy.stripe.com) or Gumroad (and Etsy, if used), whose own cookie policies apply there. After a Stripe purchase you are taken to a Google Drive folder with your files; Google’s own cookie policy applies there.</li>
 </ul>
 
 <h2>6. Who receives your data</h2>
@@ -104,6 +110,8 @@ Annex 4 of the DPA (updated 10 July 2026): Google Cloud EMEA Ltd (Ireland; data 
 <li><strong>Gumroad, Inc.</strong> (USA) – sales platform. Independent controller as merchant of record (payments, tax, fraud prevention:
 <a href="https://gumroad.com/privacy">gumroad.com/privacy</a>) and our processor for hosting and delivering files and for our customer list
 (<a href="https://gumroad.com/dpa">gumroad.com/dpa</a>).</li>
+<li><strong>Stripe</strong> – checkout and payments for purchases made from this website, through Stripe Managed Payments. Stripe acts as <strong>merchant of record</strong> and independent controller for payment, tax, fraud prevention, refunds and customer transaction support (<a href="https://stripe.com/privacy">stripe.com/privacy</a>). We receive the order details listed in section 3.</li>
+<li><strong>Google</strong> – stores the product files in Google Drive and serves them when you open the download folder after a Stripe purchase. Google processes technical data such as your IP address under its own privacy policy (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>). We do not receive a list of who downloaded the files.</li>
 <li><strong>Etsy</strong> – only if we open an Etsy shop; Etsy acts under its own privacy policy for purchases made there.</li>
 <li><strong>Buffer, Inc.</strong> (USA) – tool we use to schedule social media posts; processor for data shown in Buffer.</li>
 <li><strong>Pinterest, X and Meta (Instagram)</strong> – independent controllers of data processed on their platforms, under their own privacy policies.
@@ -124,6 +132,7 @@ and/or the European Commission’s <strong>Standard Contractual Clauses</strong>
 with <strong>MailerLite, Inc.</strong> (USA) as data importer, and MailerLite, Inc. states that it is certified under the EU-U.S. Data Privacy Framework.</li>
 <li><strong>Notion Labs, Inc.:</strong> listed on the Data Privacy Framework List; Notion’s DPA also incorporates the EU and UK Standard Contractual Clauses.</li>
 <li><strong>Gumroad:</strong> Standard Contractual Clauses in its DPA.</li>
+<li><strong>Stripe and Google:</strong> independent controllers; each states that it participates in the EU-U.S. Data Privacy Framework and uses Standard Contractual Clauses.</li>
 <li><strong>Buffer:</strong> EU-U.S. Data Privacy Framework and/or Standard Contractual Clauses.</li>
 <li><strong>OVH:</strong> EU provider (France); no transfer expected.</li>
 <li><strong>Pinterest, X and Meta</strong> choose their own transfer mechanisms as independent controllers.</li>
@@ -186,19 +195,25 @@ trading under the brand VibeToolsAI. Correspondence address (including personal 
 
 TERMS_EN = f"""
 <h1>Terms</h1>
-<p class="meta">Last updated 14 November 2026</p>
+<p class="meta">Last updated 21 November 2026</p>
 <h2>About this website</h2>
 <p>getvibetoolsai.com is run by Seweryn Bałchan, trading as GreenGastro Seweryn Bałchan (NIP 5170419982), brand VibeToolsAI,
-P.O. Box 419, ul. Asnyka 9, 35-001 Rzeszów, Poland, {E}. The website presents our digital products. Nothing is sold on this website itself.</p>
+P.O. Box 419, ul. Asnyka 9, 35-001 Rzeszów, Poland, {E}. The website presents our digital products and links to checkout.</p>
 <h2>Buying a product</h2>
-<p>All purchases are made on <strong>Gumroad</strong>, which acts as merchant of record: it takes payment, charges sales tax or VAT where required and
-issues your receipt. <a href="https://gumroad.com/terms">Gumroad’s terms</a> apply to the checkout and payment. We are responsible for the content of the
-products and for support.</p>
-<p>Prices shown here were checked on the date above. If a price on Gumroad differs, the price at Gumroad checkout applies.</p>
+<p>Purchases made with the “Buy” buttons on this website go through <strong>Stripe</strong> checkout (Stripe Managed Payments). Stripe acts as
+<strong>merchant of record</strong>: it takes payment, charges sales tax, VAT or GST where required, issues your receipt and handles payment questions,
+refunds and disputes under <a href="https://stripe.com/legal/consumer">Stripe’s terms for customers</a>. Some products, and all free downloads, are also
+available on <strong>Gumroad</strong>, which acts as merchant of record for purchases made there under <a href="https://gumroad.com/terms">Gumroad’s terms</a>.
+We are responsible for the content of the products and for product support.</p>
+<p><strong>Delivery.</strong> After a Stripe purchase you are taken straight to a download folder with your files (PDF and, where included, XLSX).
+Save the files or bookmark the folder. If you lose the link, write to {E} with your receipt and we will send it again.</p>
+<p>Prices shown here were checked on the date above. The price shown at checkout applies. Prices are in US dollars; customers in Poland may see prices
+in Polish złoty. Taxes may be added at checkout depending on your location.</p>
 <h2>Digital content and the right of withdrawal</h2>
 <p>Our products are digital files delivered immediately. If you are a consumer in the EU, you have a 14-day right of withdrawal from a distance contract,
-but you lose it once delivery of the digital content starts, provided you asked for immediate delivery and acknowledged this at checkout. Our checkout
-asks for that confirmation. This does not limit your rights if a file is faulty or does not match its description: write to {E} and we will fix it,
+but you lose it once delivery of the digital content starts, provided you asked for immediate delivery and acknowledged this at checkout, where the checkout
+asks for that confirmation. For purchases through Stripe, Stripe applies the consumer protection rules that apply to your country, including any
+cooling-off period, and may refund a purchase in line with its terms. This does not limit your rights if a file is faulty or does not match its description: write to {E} and we will fix it,
 replace it or refund it.</p>
 <h2>License</h2>
 <p>Buying a product gives you a personal license to download, print and use the files for yourself, your household or your own business.
@@ -216,12 +231,17 @@ are produced by the AI tool you choose; check them before you use them.</p>
 TERMS_PL = f"""
 <section id="pl" lang="pl">
 <h1>Regulamin (wersja polska)</h1>
-<p class="meta">Aktualizacja: 14 listopada 2026</p>
+<p class="meta">Aktualizacja: 21 listopada 2026</p>
 <p>Serwis getvibetoolsai.com prowadzi Seweryn Bałchan, GreenGastro Seweryn Bałchan, NIP 5170419982 (marka VibeToolsAI), skrytka pocztowa 419,
-ul. Asnyka 9, 35-001 Rzeszów, {E}. Strona prezentuje produkty cyfrowe; sama sprzedaż odbywa się na platformie <strong>Gumroad</strong>, która działa
-jako pośrednik (merchant of record): przyjmuje płatność, nalicza podatek i wystawia potwierdzenie zakupu.</p>
+ul. Asnyka 9, 35-001 Rzeszów, {E}. Strona prezentuje produkty cyfrowe. Zakupy przyciskiem „Kup” na tej stronie przechodzą przez kasę <strong>Stripe</strong>
+(Stripe Managed Payments), a część produktów i wszystkie darmowe pliki są też dostępne na <strong>Gumroad</strong>. W obu przypadkach sprzedawcą
+w rozumieniu rozliczeń (merchant of record) jest odpowiednio Stripe lub Gumroad: przyjmuje płatność, nalicza podatek, wystawia potwierdzenie zakupu
+i obsługuje pytania o płatności, zwroty i reklamacje płatności. Za treść produktów i pomoc odpowiadamy my.</p>
+<p><strong>Dostawa.</strong> Po zakupie przez Stripe od razu trafiasz do folderu z plikami (PDF, a gdy jest w zestawie, także XLSX). Zapisz pliki albo
+dodaj folder do zakładek. Jeśli zgubisz link, napisz na {E} z potwierdzeniem zakupu, a wyślemy go ponownie. Ceny podajemy w dolarach amerykańskich;
+klienci w Polsce mogą widzieć cenę w złotych. Obowiązuje cena widoczna w kasie.</p>
 <p><strong>Prawo odstąpienia.</strong> Produkty są treściami cyfrowymi dostarczanymi od razu. Konsument ma 14 dni na odstąpienie od umowy zawartej na odległość,
-ale traci to prawo z chwilą rozpoczęcia dostarczania treści cyfrowej, jeśli zażądał natychmiastowego dostępu i przyjął to do wiadomości przy zakupie.
+ale traci to prawo z chwilą rozpoczęcia dostarczania treści cyfrowej, jeśli zażądał natychmiastowego dostępu i przyjął to do wiadomości przy zakupie tam, gdzie kasa o to pyta. Przy zakupach przez Stripe to Stripe stosuje przepisy konsumenckie obowiązujące w Twoim kraju, w tym ewentualny okres na odstąpienie, i może zwrócić płatność zgodnie ze swoim regulaminem.
 Nie ogranicza to Twoich praw, gdy plik jest wadliwy lub niezgodny z opisem: napisz na {E}, a poprawimy go, wymienimy albo zwrócimy pieniądze.</p>
 <p><strong>Licencja.</strong> Pliki możesz pobierać, drukować i wykorzystywać na własne potrzeby oraz w swojej firmie. Nie wolno ich odsprzedawać ani udostępniać publicznie.</p>
 <p><strong>Charakter materiałów.</strong> Materiały są informacyjne i organizacyjne; nie stanowią porady prawnej, podatkowej ani finansowej. Przepisy (np. o KSeF)
