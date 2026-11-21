@@ -293,7 +293,7 @@ DETAILS = {
             "Warianty REDUKCJA i MASA z gramaturami", "2 plany tygodniowe z listami zakupów (PDF + XLSX)",
             "Tagi i alergeny UE-14",
         ],
-        "specs": ["127 stron PDF A4", "Plany i listy zakupów", "Arkusz XLSX"],
+        "specs": ["128 stron PDF A4", "Plany i listy zakupów", "Arkusz XLSX"],
         "previews": ["paliwo-w-15-minut-1", "paliwo-w-15-minut-2", "paliwo-w-15-minut-3"],
         "note": "To nie jest dieta ani plan odchudzania.",
     },
