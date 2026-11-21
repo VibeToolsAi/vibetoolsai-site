@@ -86,6 +86,14 @@ def page(*, path, lang, title, description, body, alt=None, image=None, jsonld=N
         for h, t in nav)
     alt_link = f'<link rel="alternate" hreflang="{"en" if pl else "pl"}" href="{DOMAIN}{alt}">' if alt else ""
     og_img = f'<meta property="og:image" content="{DOMAIN}/assets/p/{image}.jpg">' if image else ""
+    # Product pages: og:type product + price, so Pinterest rich pins show the price.
+    offer = (jsonld or {}).get("offers") if isinstance(jsonld, dict) else None
+    if isinstance(offer, list):
+        offer = offer[0] if offer else None
+    og_type = "product" if offer else "website"
+    og_price = (f'<meta property="product:price:amount" content="{offer["price"]}">\n'
+                f'<meta property="product:price:currency" content="{offer["priceCurrency"]}">\n'
+                f'<meta property="og:availability" content="instock">') if offer else ""
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
     js = '<script src="/assets/shop.js" defer></script>' if script else ""
     legal = ('<a href="/pl/polityka-prywatnosci/">Polityka prywatności</a><a href="/terms/#pl">Regulamin</a>' if pl else
@@ -102,7 +110,8 @@ def page(*, path, lang, title, description, body, alt=None, image=None, jsonld=N
 <link rel="canonical" href="{canonical}">
 <link rel="alternate" hreflang="{lang}" href="{canonical}">
 {alt_link}
-<meta property="og:type" content="website">
+<meta property="og:type" content="{og_type}">
+{og_price}
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(description)}">
 <meta property="og:url" content="{canonical}">
