@@ -167,7 +167,7 @@ def card(slug, campaign):
 def trust(pl=False):
     items = ([("download", "Natychmiastowe pobranie", "Pliki od razu po zapłacie"),
               ("print", "Do druku i do edycji", "PDF oraz arkusze Excel / Google"),
-              ("lock", "Bezpieczna płatność", "Karta, BLIK, Revolut Pay; podatki rozlicza Stripe"),
+              ("lock", "Bezpieczna płatność", "Karta lub Apple Pay / Google Pay; podatki rozlicza Stripe"),
               ("sheet", "Twoje dane zostają u Ciebie", "Pliki bez śledzenia")] if pl else
              [("download", "Instant digital download", "Your files open right after payment"),
               ("print", "Print it or fill it in", "PDF in US Letter + A4, plus spreadsheets"),
@@ -329,8 +329,8 @@ def build_pl():
     </div>
     <div id="ai-firma">
       <h2>Zakup i kontakt</h2>
-      <p>Płatność obsługuje Stripe, który rozlicza sprzedaż i podatki jako pośrednik (merchant of record). Zapłacisz kartą, BLIK-iem
-      lub Revolut Pay. Po zapłacie od razu otwiera się folder z plikami, a potwierdzenie zakupu przychodzi e-mailem. Zgubiony link,
+      <p>Płatność obsługuje Stripe, który rozlicza sprzedaż i podatki jako pośrednik (merchant of record). Zapłacisz kartą
+      albo przez Apple Pay / Google Pay. Po zapłacie od razu otwiera się folder z plikami, a potwierdzenie zakupu przychodzi e-mailem. Zgubiony link,
       pytania i problemy: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
     </div>
   </div>
@@ -472,7 +472,7 @@ def build_product(slug):
     rel = "\n".join(card(s, f"related-{slug}") for s in related)
     crumb_home = "/pl/" if pl else "/"
     dl = ("Natychmiastowe pobranie" if pl else "Instant digital download")
-    pay = (("Bezpieczna płatność Stripe: karta, BLIK, Revolut Pay" if pl else "Secure Stripe checkout; sales tax handled for you") if slug in STRIPE_LINKS
+    pay = (("Bezpieczna płatność Stripe: karta, Apple Pay, Google Pay" if pl else "Secure Stripe checkout; sales tax handled for you") if slug in STRIPE_LINKS
            else ("Płatność i podatki obsługuje Gumroad" if pl else "Secure checkout on Gumroad; sales tax handled for you"))
     if p["free"] or slug not in STRIPE_LINKS:
         delivery = ("Po zakupie Gumroad wysyła e-mail z linkiem do plików. Pliki są też w Twojej bibliotece Gumroad." if pl else
