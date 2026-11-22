@@ -11,7 +11,8 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from products import COLLECTIONS, STORE  # noqa: E402
-from stripe_links import STRIPE_LINKS  # noqa: E402
+from stripe_links import STRIPE_LINKS
+from signup_forms import SIGNUP, ML_ACCOUNT  # noqa: E402
 from details import DETAILS, FREE  # noqa: E402
 from legal import PRIVACY_EN, TERMS_EN, TERMS_PL  # noqa: E402
 from legal_pl import PRIVACY_PL  # noqa: E402
@@ -491,6 +492,24 @@ def build_product(slug):
                     f"przychodzi e-mailem od Stripe. Zgubiony link? Napisz na {EMAIL}, wyślemy go ponownie." if pl else
                     "Right after payment your download folder opens. Save the files or bookmark the folder. Stripe emails your receipt. "
                     f"Lost the link? Email {EMAIL} and we’ll send it again.")
+    signup_html = ""
+    sf = SIGNUP.get(slug)
+    if sf:
+        base = f"https://assets.mailerlite.com/jsonp/{ML_ACCOUNT}/forms/"
+        priv = "/pl/polityka-prywatnosci/" if pl else "/privacy/"
+        signup_html = f"""<form class="signup" data-ml-plain="{base}{sf['plain']}/subscribe" data-ml-consent="{base}{sf['consent']}/subscribe" novalidate>
+          <label for="su-email">{"Twój e-mail" if pl else "Your email"}</label>
+          <input id="su-email" type="email" name="email" required autocomplete="email" placeholder="{"ty@przyklad.pl" if pl else "you@example.com"}">
+          <label class="su-consent"><input type="checkbox" name="consent"> <span>{e(sf["consent_text"])}</span></label>
+          <button class="btn btn-lg btn-block" type="submit">{e(sf["button"])}</button>
+          <p class="su-note">{"Najpierw wyślemy e-mail z prośbą o potwierdzenie. Po kliknięciu dostaniesz link do pobrania." if pl else "We’ll first email you a link to confirm your address. Click it and your download link arrives by email."} <a href="{priv}">{"Polityka prywatności" if pl else "Privacy policy"}</a></p>
+          <p class="su-msg" role="status" aria-live="polite"></p>
+        </form>
+        <p class="su-alt">{"Wolisz Gumroad?" if pl else "Prefer Gumroad?"} <a href="{buy_url(slug, camp)}">{"Pobierz tam" if pl else "Download it there"}</a></p>"""
+        dl = ("Za darmo, wysyłka e-mailem" if pl else "Free, sent to your inbox")
+        pay = ("Bez spamu: najpierw tylko e-mail z potwierdzeniem" if pl else "No spam: a single confirmation email first")
+        delivery = ("Wpisz e-mail i potwierdź go linkiem z wiadomości. Link do pobrania przyjdzie e-mailem." if pl else
+                    "Enter your email and confirm it with the link we send. Your download link then arrives by email.")
     guarantee = ("Plik nie działa albo nie zgadza się z opisem? Napisz w ciągu 14 dni, poprawimy go lub zwrócimy pieniądze."
                  if pl else "File broken or not as described? Email within 14 days and we’ll fix, replace or refund it.")
     amount, cur = price_number(p)
@@ -510,7 +529,7 @@ def build_product(slug):
         <h1>{e(title)}</h1>
         <p class="lede">{e(lede)}</p>
         <p class="big-price">{e(p["price"])}{was}</p>
-        <a class="btn btn-lg btn-block" href="{buy_url(slug, camp)}">{buy_label}</a>
+        {signup_html or f'<a class="btn btn-lg btn-block" href="{buy_url(slug, camp)}">{buy_label}</a>'}
         <ul class="specs">{chips}</ul>
         <ul class="assure">
           <li>{ICON["download"]}{dl}</li>

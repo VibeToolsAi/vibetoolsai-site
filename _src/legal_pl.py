@@ -4,7 +4,7 @@ E = '<a href="mailto:hello@getvibetoolsai.com">hello@getvibetoolsai.com</a>'
 
 PRIVACY_PL = f"""
 <h1>Polityka prywatności</h1>
-<p class="meta">Wersja 1.4 · Obowiązuje od 21 listopada 2026 · Zastępuje wersję 1.3 z 14 listopada 2026 ·
+<p class="meta">Wersja 1.4 · Obowiązuje od 21 listopada 2026 · Zastępuje wersję 1.3 z 14 listopada 2026 · Aktualizacja 22 listopada 2026: formularze zapisu na stronie (sekcja 5) ·
 <a href="/privacy/" lang="en">English version</a></p>
 <p>Ta polityka wyjaśnia, jakie dane osobowe przetwarzamy, gdy odwiedzasz tę stronę, zapisujesz się po darmową checklistę lub na nasze e-maile,
 pobierasz lub kupujesz nasze produkty cyfrowe (planery do druku, checklisty, arkusze i zestawy promptów), kontaktujesz się z nami albo korzystasz
@@ -79,8 +79,9 @@ lub napisać na {E}. Działamy niezwłocznie; zgodnie z CASL i CAN-SPAM najpóź
 <li><strong>Ta strona</strong> (getvibetoolsai.com) to strona statyczna hostowana przez <strong>GitHub Pages</strong>. <strong>Nie ustawia plików cookie</strong>,
 nie używa <strong>reklam ani śledzenia mediów społecznościowych</strong> i nie wczytuje czcionek ani obrazów od innych firm.
 GitHub zapisuje dane techniczne wymienione w sekcji 3 w logach serwera, aby udostępniać i zabezpieczać stronę.</li>
-<li>Naszą stronę i formularz zapisu hostuje <strong>MailerLite</strong> pod adresem MailerLite. MailerLite może używać plików cookie lub podobnych technologii,
-które są niezbędne do wyświetlenia strony, wysłania formularza i ochrony przed spamem. Nie wymagają one zgody według przepisów UE.
+<li><strong>Formularze zapisu</strong> na stronach produktów przesyłają wpisany adres e-mail (i informację, czy zaznaczono osobne pole zgody marketingowej)
+bezpośrednio do <strong>MailerLite</strong>. Formularz na naszej stronie nie ustawia plików cookie. Strony potwierdzenia hostuje MailerLite, który może używać plików cookie
+lub podobnych technologii niezbędnych do ich wyświetlenia, obsługi zapisu i ochrony przed spamem. Nie wymagają one zgody według przepisów UE.
 Szczegóły: <a href="https://www.mailerlite.com/legal/privacy-policy">polityka prywatności MailerLite</a> (sekcja „Tracking technologies”).</li>
 <li><strong>Statystyki odwiedzin:</strong> korzystamy z <strong>Cloudflare Web Analytics</strong>, żeby liczyć wyświetlenia stron i sprawdzać, które strony
 i źródła wejść są popularne. Narzędzie <strong>nie ustawia plików cookie</strong>, nie korzysta z pamięci przeglądarki, nie tworzy Twojego profilu i nie śledzi Cię
@@ -99,7 +100,7 @@ Nie zawiera ono danych osobowych.</li>
 <ul>
 <li><strong>GitHub, Inc.</strong> (USA) – hostuje tę stronę (GitHub Pages) i przetwarza logi serwera zgodnie z
 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</li>
-<li><strong>MailerLite</strong> – nasz dostawca poczty, działający jako <strong>podmiot przetwarzający</strong>. Hostuje stronę i formularz zapisu, wysyła
+<li><strong>MailerLite</strong> – nasz dostawca poczty, działający jako <strong>podmiot przetwarzający</strong>. Odbiera dane z formularzy zapisu i hostuje strony potwierdzenia, wysyła
 e-maile potwierdzające, z plikami i marketingowe oraz przechowuje w naszym imieniu listę subskrybentów i zapisy zgód na podstawie
 <a href="https://www.mailerlite.com/legal/data-processing-agreement">umowy powierzenia (DPA)</a>. Podmiot umowny dla klientów z EOG według polityki
 prywatności MailerLite: <strong>MailerLite Limited, 88 Harcourt Street, Dublin 2, D02 DK18, Irlandia</strong>. Podprocesorzy z załącznika 4 do DPA

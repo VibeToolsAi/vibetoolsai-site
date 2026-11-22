@@ -6,7 +6,7 @@ E = '<a href="mailto:hello@getvibetoolsai.com">hello@getvibetoolsai.com</a>'
 
 PRIVACY_EN = f"""
 <h1>Privacy policy</h1>
-<p class="meta">Version 1.4 · Effective 21 November 2026 · Replaces version 1.3 of 14 November 2026 · <a href="/pl/polityka-prywatnosci/" lang="pl">Wersja polska</a></p>
+<p class="meta">Version 1.4 · Effective 21 November 2026 · Replaces version 1.3 of 14 November 2026 · Updated 22 November 2026: sign-up forms on this website (section 5) · <a href="/pl/polityka-prywatnosci/" lang="pl">Wersja polska</a></p>
 <p>This policy explains what personal data we process when you visit this website, sign up for our free checklist or our emails,
 download or buy our digital products (printable planners, checklists, spreadsheets and prompt packs), contact us, or interact with our
 social media profiles. It is written to meet Articles 13 and 14 of the EU General Data Protection Regulation (GDPR) and also covers
@@ -80,8 +80,9 @@ We act on it promptly; under CASL and CAN-SPAM, within 10 business days at the l
 <li><strong>This website</strong> (getvibetoolsai.com) is a static site hosted by <strong>GitHub Pages</strong>. It sets <strong>no cookies</strong>, uses
 <strong>no advertising or social media tracking</strong> and loads no fonts or images from other companies. GitHub records the
 technical data listed in section 3 in its server logs to deliver and secure the site.</li>
-<li>Our sign-up page and form are hosted by <strong>MailerLite</strong> on a MailerLite web address. MailerLite may use cookies or similar technologies
-that are strictly necessary to display the page, submit the form and protect it from spam and abuse. These do not require consent under EU rules.
+<li><strong>Sign-up forms</strong> on our product pages send the email address you enter (and whether you ticked the separate marketing box) directly to
+<strong>MailerLite</strong>. The form on our site sets no cookies. MailerLite hosts the confirmation pages and may use cookies or similar technologies
+that are strictly necessary to display those pages, process the sign-up and protect it from spam and abuse. These do not require consent under EU rules.
 Details: <a href="https://www.mailerlite.com/legal/privacy-policy">MailerLite’s privacy policy</a> (see “Tracking technologies”).</li>
 <li><strong>Visitor statistics:</strong> we use <strong>Cloudflare Web Analytics</strong> to count page views and see which pages and referring websites
 are popular. It sets <strong>no cookies</strong>, does not use local storage, does not create a profile of you and does not track you across websites. It records
@@ -100,7 +101,7 @@ personal data.</li>
 <ul>
 <li><strong>GitHub, Inc.</strong> (USA) – hosts this website (GitHub Pages) and processes server log data under the
 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</li>
-<li><strong>MailerLite</strong> – our email service provider, acting as our <strong>processor</strong>. It hosts the sign-up page and form, sends the confirmation,
+<li><strong>MailerLite</strong> – our email service provider, acting as our <strong>processor</strong>. It receives the data from our sign-up forms and hosts the confirmation pages, sends the confirmation,
 delivery and marketing emails, and stores our subscriber list and consent records on our behalf under its
 <a href="https://www.mailerlite.com/legal/data-processing-agreement">Data Processing Addendum</a>. Contracting entity for customers in the EEA,
 according to MailerLite’s privacy policy: <strong>MailerLite Limited, 88 Harcourt Street, Dublin 2, D02 DK18, Ireland</strong>. Sub-processors listed in

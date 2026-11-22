@@ -69,3 +69,45 @@
     });
   }
 })();
+
+// MailerLite sign-up form (free products). Posts to the consent form only if the separate box is ticked.
+(function () {
+  var f = document.querySelector('form.signup');
+  if (!f) return;
+  var pl = document.documentElement.lang === 'pl';
+  var msg = f.querySelector('.su-msg');
+  var btn = f.querySelector('button');
+  f.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var email = f.email.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      msg.textContent = pl ? 'Wpisz poprawny adres e-mail.' : 'Please enter a valid email address.';
+      f.email.focus();
+      return;
+    }
+    var url = f.consent.checked ? f.getAttribute('data-ml-consent') : f.getAttribute('data-ml-plain');
+    var fd = new FormData();
+    fd.append('fields[email]', email);
+    fd.append('ml-submit', '1');
+    fd.append('anticsrf', 'true');
+    btn.disabled = true;
+    msg.textContent = pl ? 'Wysyłanie…' : 'Sending…';
+    fetch(url, { method: 'POST', body: fd })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.success) {
+          f.querySelectorAll('input, label').forEach(function (el) { el.hidden = true; });
+          btn.hidden = true;
+          msg.textContent = pl ? 'Gotowe! Sprawdź skrzynkę i kliknij link potwierdzający (zajrzyj też do spamu).'
+                               : 'Done! Check your inbox and click the confirmation link (check spam too).';
+        } else {
+          btn.disabled = false;
+          msg.textContent = pl ? 'Nie udało się zapisać. Sprawdź adres i spróbuj ponownie.' : 'That didn’t work. Check the address and try again.';
+        }
+      })
+      .catch(function () {
+        btn.disabled = false;
+        msg.textContent = pl ? 'Błąd połączenia. Spróbuj ponownie.' : 'Connection error. Please try again.';
+      });
+  });
+})();

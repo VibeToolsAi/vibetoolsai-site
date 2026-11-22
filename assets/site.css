@@ -225,3 +225,13 @@ svg { width: 1.25em; height: 1.25em; flex: none; fill: none; stroke: currentColo
 .foot .brand-word { color: #fff; }
 .foot-seller { color: #fff; }
 .foot-links { display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; }
+
+/* Sign-up form on free product pages */
+.signup { display: grid; gap: .6rem; margin: .5rem 0 0; }
+.signup label[for] { font-weight: 600; font-size: .95rem; }
+.signup input[type=email] { font: inherit; padding: .8rem 1rem; border: 1px solid #c9c9c9; border-radius: 12px; width: 100%; }
+.signup .su-consent { display: flex; gap: .55rem; align-items: flex-start; font-size: .88rem; line-height: 1.4; }
+.signup .su-consent input { margin-top: .2rem; flex: none; }
+.signup .su-note, .su-alt { font-size: .82rem; color: #555; margin: 0; }
+.signup .su-msg { font-weight: 600; margin: 0; min-height: 1.2em; }
+.su-alt { margin-top: .6rem; }
