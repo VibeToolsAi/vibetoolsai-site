@@ -579,6 +579,43 @@ or the <a href="/pl/">Polish products</a>.</p></div></section>"""
     return page(path="/404.html", lang="en", title="Page not found · VibeToolsAI", description="Page not found.", body=body)
 
 
+def build_thanks(pl=False):
+    """Page shown after a subscriber clicks the confirmation link (MailerLite redirect). Auto-redirects to the shop."""
+    path = "/pl/dziekujemy/" if pl else "/thanks/"
+    target = "/pl/#sklep" if pl else "/#shop"
+    picks = ["zestaw-wdrozeniowy-ksef", "teczka-ksiegowy-ksef", "ksef-toolkit-jdg"] if pl else \
+            ["before-after-legacy-bundle", "kept-kindly-legacy-planner", "kept-kindly-caregiver-binder"]
+    cards = "\n".join(card(s, "thanks") for s in picks if s in PRODUCTS)
+    if pl:
+        h1, lede = "Gotowe, adres potwierdzony!", "Twój darmowy plik jest już w drodze. Za chwilę znajdziesz go w skrzynce (zajrzyj też do spamu i zakładki Oferty)."
+        cnt, go, stay, more = "Za <b id=t>10</b> s przeniesiemy Cię do sklepu.", "Przejdź teraz", "Zostań tutaj", "Może się przydać"
+    else:
+        h1, lede = "You’re confirmed!", "Your free sheet is on its way. It will be in your inbox in a minute (check spam and the Promotions tab too)."
+        cnt, go, stay, more = "Taking you to the shop in <b id=t>10</b> s.", "Go now", "Stay here", "You might also like"
+    body = f"""<section class="hero"><div class="wrap narrow thanks">
+<h1>{h1}</h1>
+<p class="lede">{lede}</p>
+<p class="countdown" id="cd">{cnt} <a class="btn" href="{target}">{go}</a> <button type="button" class="btn btn-ghost" id="stay">{stay}</button></p>
+</div></section>
+<section class="shop"><div class="wrap"><div class="shop-head"><h2>{more}</h2></div><div class="grid grid-3">
+{cards}
+</div></div></section>
+<script>
+(function () {{
+  var n = 10, el = document.getElementById('t'), stop = false;
+  document.getElementById('stay').addEventListener('click', function () {{ stop = true; document.getElementById('cd').hidden = true; }});
+  var iv = setInterval(function () {{
+    if (stop) {{ clearInterval(iv); return; }}
+    n -= 1; if (el) el.textContent = n;
+    if (n <= 0) {{ clearInterval(iv); location.href = '{target}'; }}
+  }}, 1000);
+}})();
+</script>"""
+    html = page(path=path, lang="pl" if pl else "en", title=("Dziękujemy" if pl else "Thank you") + " · VibeToolsAI",
+                description=lede, body=body)
+    return html.replace('<meta name="description"', '<meta name="robots" content="noindex">\n<meta name="description"', 1)
+
+
 def write(rel, text):
     p = ROOT / rel
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -600,6 +637,8 @@ def main():
     write("terms/index.html", build_legal("/terms/", "en", "Terms · VibeToolsAI",
                                          "Terms for using getvibetoolsai.com and buying VibeToolsAI products.", TERMS_EN + TERMS_PL))
     write("404.html", build_404())
+    write("thanks/index.html", build_thanks())
+    write("pl/dziekujemy/index.html", build_thanks(pl=True))
     sm = "".join(f"<url><loc>{DOMAIN}{u}</loc></url>" for u in urls)
     write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>\n')
     write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
