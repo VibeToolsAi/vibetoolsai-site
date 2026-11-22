@@ -502,14 +502,14 @@ def build_product(slug):
           <input id="su-email" type="email" name="email" required autocomplete="email" placeholder="{"ty@przyklad.pl" if pl else "you@example.com"}">
           <label class="su-consent"><input type="checkbox" name="consent"> <span>{e(sf["consent_text"])}</span></label>
           <button class="btn btn-lg btn-block" type="submit">{e(sf["button"])}</button>
-          <p class="su-note">{"Najpierw wyślemy e-mail z prośbą o potwierdzenie. Po kliknięciu dostaniesz link do pobrania." if pl else "We’ll first email you a link to confirm your address. Click it and your download link arrives by email."} <a href="{priv}">{"Polityka prywatności" if pl else "Privacy policy"}</a></p>
+          <p class="su-note">{"Link do pobrania przyjdzie e-mailem w ciągu minuty. Jeśli zaznaczysz zgodę na maile, najpierw poprosimy o potwierdzenie adresu." if pl else "Your download link arrives by email within a minute. If you tick the box for emails, we’ll ask you to confirm your address first."} <a href="{priv}">{"Polityka prywatności" if pl else "Privacy policy"}</a></p>
           <p class="su-msg" role="status" aria-live="polite"></p>
         </form>
         <p class="su-alt">{"Wolisz Gumroad?" if pl else "Prefer Gumroad?"} <a href="{buy_url(slug, camp)}">{"Pobierz tam" if pl else "Download it there"}</a></p>"""
         dl = ("Za darmo, wysyłka e-mailem" if pl else "Free, sent to your inbox")
-        pay = ("Bez spamu: najpierw tylko e-mail z potwierdzeniem" if pl else "No spam: a single confirmation email first")
-        delivery = ("Wpisz e-mail i potwierdź go linkiem z wiadomości. Link do pobrania przyjdzie e-mailem." if pl else
-                    "Enter your email and confirm it with the link we send. Your download link then arrives by email.")
+        pay = ("Bez spamu: inne maile tylko za Twoją zgodą" if pl else "No spam: other emails only if you opt in")
+        delivery = ("Wpisz e-mail, a link do pobrania przyjdzie w ciągu minuty." if pl else
+                    "Enter your email and your download link arrives within a minute.")
     guarantee = ("Plik nie działa albo nie zgadza się z opisem? Napisz w ciągu 14 dni, poprawimy go lub zwrócimy pieniądze."
                  if pl else "File broken or not as described? Email within 14 days and we’ll fix, replace or refund it.")
     amount, cur = price_number(p)
@@ -587,10 +587,10 @@ def build_thanks(pl=False):
             ["before-after-legacy-bundle", "kept-kindly-legacy-planner", "kept-kindly-caregiver-binder"]
     cards = "\n".join(card(s, "thanks") for s in picks if s in PRODUCTS)
     if pl:
-        h1, lede = "Gotowe, adres potwierdzony!", "Twój darmowy plik jest już w drodze. Za chwilę znajdziesz go w skrzynce (zajrzyj też do spamu i zakładki Oferty)."
+        h1, lede = "Gotowe, jesteś zapisany!", "Twój darmowy plik jest już w drodze. Za chwilę znajdziesz go w skrzynce (zajrzyj też do spamu i zakładki Oferty)."
         cnt, go, stay, more = "Za <b id=t>10</b> s przeniesiemy Cię do sklepu.", "Przejdź teraz", "Zostań tutaj", "Może się przydać"
     else:
-        h1, lede = "You’re confirmed!", "Your free sheet is on its way. It will be in your inbox in a minute (check spam and the Promotions tab too)."
+        h1, lede = "You’re in!", "Your free sheet is on its way. It will be in your inbox in a minute (check spam and the Promotions tab too)."
         cnt, go, stay, more = "Taking you to the shop in <b id=t>10</b> s.", "Go now", "Stay here", "You might also like"
     body = f"""<section class="hero"><div class="wrap narrow thanks">
 <h1>{h1}</h1>

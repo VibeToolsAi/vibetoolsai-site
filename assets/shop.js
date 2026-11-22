@@ -96,10 +96,15 @@
       .then(function (r) { return r.json(); })
       .then(function (d) {
         if (d && d.success) {
+          if (!f.consent.checked) {
+            // Delivery-only form has no confirmation step: go straight to the thank-you page.
+            window.location.href = pl ? '/pl/dziekujemy/' : '/thanks/';
+            return;
+          }
           f.querySelectorAll('input, label').forEach(function (el) { el.hidden = true; });
           btn.hidden = true;
-          msg.textContent = pl ? 'Gotowe! Sprawdź skrzynkę i kliknij link potwierdzający (zajrzyj też do spamu).'
-                               : 'Done! Check your inbox and click the confirmation link (check spam too).';
+          msg.textContent = pl ? 'Gotowe! Sprawdź skrzynkę i kliknij link potwierdzający (zajrzyj też do spamu). Potem od razu przyjdzie plik.'
+                               : 'Done! Check your inbox and click the confirmation link (check spam too). Your sheet follows right after.';
         } else {
           btn.disabled = false;
           msg.textContent = pl ? 'Nie udało się zapisać. Sprawdź adres i spróbuj ponownie.' : 'That didn’t work. Check the address and try again.';
