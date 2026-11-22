@@ -616,6 +616,26 @@ def build_thanks(pl=False):
     return html.replace('<meta name="description"', '<meta name="robots" content="noindex">\n<meta name="description"', 1)
 
 
+def build_free_download():
+    """Download page linked from the MailerLite delivery/welcome emails (no checkout, direct PDFs)."""
+    path = "/free/where-it-all-is/"
+    picks = ["before-after-legacy-bundle", "kept-kindly-legacy-planner", "kept-kindly-caregiver-binder"]
+    cards = "\n".join(card(s, "free-download") for s in picks if s in PRODUCTS)
+    body = f"""<section class="hero"><div class="wrap narrow thanks">
+<h1>Your free sheet: Where It All Is</h1>
+<p class="lede">One page, made to be printed and filled in by hand. Write <b>where</b> each paper is kept, never passwords or account numbers.</p>
+<p class="countdown"><a class="btn btn-lg" href="/files/Where-It-All-Is-v1.0-Letter.pdf" download>Download (US Letter)</a>
+<a class="btn btn-lg btn-ghost" href="/files/Where-It-All-Is-v1.0-A4.pdf" download>Download (A4)</a></p>
+<p class="su-note">Informational and organizational only, not legal, tax or financial advice. Problems with the file? Email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+</div></section>
+<section class="shop"><div class="wrap"><div class="shop-head"><h2>Want the whole family file in one place?</h2></div><div class="grid grid-3">
+{cards}
+</div></div></section>"""
+    html = page(path=path, lang="en", title="Download: Where It All Is · VibeToolsAI",
+                description="Download the free Where It All Is family document sheet.", body=body)
+    return html.replace('<meta name="description"', '<meta name="robots" content="noindex">\n<meta name="description"', 1)
+
+
 def write(rel, text):
     p = ROOT / rel
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -638,6 +658,7 @@ def main():
                                          "Terms for using getvibetoolsai.com and buying VibeToolsAI products.", TERMS_EN + TERMS_PL))
     write("404.html", build_404())
     write("thanks/index.html", build_thanks())
+    write("free/where-it-all-is/index.html", build_free_download())
     write("pl/dziekujemy/index.html", build_thanks(pl=True))
     sm = "".join(f"<url><loc>{DOMAIN}{u}</loc></url>" for u in urls)
     write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>\n')
