@@ -97,6 +97,8 @@ def page(*, path, lang, title, description, body, alt=None, image=None, jsonld=N
                 f'<meta property="og:availability" content="instock">') if offer else ""
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
     js = '<script src="/assets/shop.js" defer></script>' if script else ""
+    if not pl:
+        js += '<script src="/assets/bf.js" defer></script>'
     legal = ('<a href="/pl/polityka-prywatnosci/">Polityka prywatności</a><a href="/terms/#pl">Regulamin</a>' if pl else
              '<a href="/privacy/">Privacy policy</a><a href="/terms/">Terms</a>')
     disclaimer = ("Materiały mają charakter informacyjny i organizacyjny. Nie są poradą prawną, podatkową ani finansową." if pl else
