@@ -105,7 +105,7 @@ COLLECTIONS = [
              "price": "49 zł", "formats": ["Pakiet ZIP"],
              "text": "Przewodnik po zmianach od 1.01.2027 z planem przejścia na e-faktury.", "featured": True},
             {"slug": "zestaw-wdrozeniowy-ksef", "name": "Zestaw wdrożeniowy KSeF dla freelancera i JDG",
-             "price": "59 zł", "formats": ["Arkusz", "Przewodnik"],
+             "price": "47 zł", "formats": ["Arkusz", "Przewodnik"],
              "text": "Jeden arkusz na faktury z numerem KSeF, odrzucenia, pobrane koszty i dostępy."},
             {"slug": "teczka-ksiegowy-ksef", "name": "Teczka „Księgowy + KSeF” dla JDG",
              "price": "39 zł", "formats": ["Arkusz", "PDF"],
