@@ -638,6 +638,25 @@ def build_free_download():
     return html.replace('<meta name="description"', '<meta name="robots" content="noindex">\n<meta name="description"', 1)
 
 
+def build_free_download_ksef():
+    """PL download page for the free KSeF 10k counter (linked from the MailerLite delivery email)."""
+    path = "/pl/darmowe/licznik-10k/"
+    picks = ["zestaw-wdrozeniowy-ksef", "teczka-ksiegowy-ksef", "ksef-toolkit-jdg"]
+    cards = "\n".join(card(s, "free-download-ksef") for s in picks if s in PRODUCTS)
+    body = f"""<section class="hero"><div class="wrap narrow thanks">
+<h1>Twój darmowy licznik limitu 10 000 zł + checklista KSeF</h1>
+<p class="lede">Arkusz pilnuje limitu w 2026 r. (liczą się tylko faktury B2B; po przekroczeniu limit nie wraca), a checklista prowadzi przez przygotowanie do 1.01.2027. W paczce: arkusz SAMPLE i BLANK (.xlsx, działa w Google Sheets i Excelu), checklista PDF i instrukcja START_TUTAJ.</p>
+<p class="countdown"><a class="btn btn-lg" href="/files/KSeF_Licznik_10k_pakiet-v2-2026-11-14.zip" download>Pobierz pakiet (ZIP)</a></p>
+<p class="su-note">Narzędzie organizacyjne – nie stanowi porady podatkowej. Zweryfikuj z księgowym lub na ksef.podatki.gov.pl. Problem z plikiem? Napisz na <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+</div></section>
+<section class="shop"><div class="wrap"><div class="shop-head"><h2>Cały KSeF w jednym miejscu</h2></div><div class="grid grid-3">
+{cards}
+</div></div></section>"""
+    html = page(path=path, lang="pl", title="Pobierz: licznik limitu 10 000 zł + checklista KSeF · VibeToolsAI",
+                description="Pobierz darmowy licznik limitu 10 000 zł i checklistę KSeF 2027.", body=body)
+    return html.replace('<meta name="description"', '<meta name="robots" content="noindex">\n<meta name="description"', 1)
+
+
 def write(rel, text):
     p = ROOT / rel
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -662,6 +681,7 @@ def main():
     write("thanks/index.html", build_thanks())
     write("free/where-it-all-is/index.html", build_free_download())
     write("pl/dziekujemy/index.html", build_thanks(pl=True))
+    write("pl/darmowe/licznik-10k/index.html", build_free_download_ksef())
     sm = "".join(f"<url><loc>{DOMAIN}{u}</loc></url>" for u in urls)
     write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>\n')
     write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")

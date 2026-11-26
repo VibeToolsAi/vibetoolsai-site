@@ -12,4 +12,12 @@ SIGNUP = {
         "consent_text": ("Yes, also send me Kept Kindly emails: a short welcome series, one practical email a week, "
                          "news about new planners and occasional offers. I can unsubscribe at any time."),
     },
+    "free-ksef-licznik-10k": {
+        "plain": "205191071391548946",
+        "consent": "205191072771475245",
+        "lang": "pl",
+        "button": "Wyślij mi licznik na e-mail",
+        "consent_text": ("Tak, wysyłajcie mi też maile VibeToolsAI o KSeF i narzędziach dla JDG: praktyczne wskazówki, "
+                         "nowe produkty i okazjonalne oferty. Mogę się wypisać w każdej chwili."),
+    },
 }
